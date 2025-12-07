@@ -12,9 +12,9 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 const heroVideoUrl = "/assets/videos/ac4e42915f3905919be7879894e9930d.mp4";
 
 const metadata = {
-  title: 'Agent Orchestration System Platform - aios-rs',
+  title: 'MoFA - Modular Framework for Agents',
   ignoreTitleTemplate: true,
-  description: '企业级智能体系统，构建AI原生的企业业务系统底座。',
+  description: '开源的模块化智能体开发框架，让开发者和企业快速构建、部署和管理下一代AI应用。',
 };
 ---
 
@@ -23,11 +23,11 @@ const metadata = {
 
   <Hero actions={[]} image={null}>
     <Fragment slot="title">
-      <span class="text-accent dark:text-white">Agent Management And Orchestration System</span>
+      <span class="text-accent dark:text-white">MoFA - Modular Framework for Agents</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      企业级智能体管理系统，构建AI原生的企业业务系统底座。
+      开源的、模块化的、可组合的AI智能体开发框架，让普通人做非凡事。
     </Fragment>
 
     <Fragment slot="video">
@@ -68,8 +68,8 @@ const metadata = {
   <!-- Note Widget ******************* -->
 
   <Note
-    title="结论先行"
-    description="业务系统不会消失，但 GUI 的主导性会弱化；AI Native 的低代码/无代码平台将成为企业业务系统的新底座；所有业务系统都要嵌入AgentOS，而不是与智能体平行存在。"
+    title="让智能体开发更简单"
+    description="MoFA 创新性的“数据流驱动”和“组合式AI”架构，解决了当前智能体开发技术门槛高、系统难以维护、组件复用性差等痛点。"
   />
 
   <!-- Content Widget **************** -->
@@ -78,17 +78,17 @@ const metadata = {
     id="architecture"
     isReversed
     tagline="核心架构"
-    title="为什么业务系统在智能体时代仍然存在？"
+    title="数据流驱动的组合式AI架构"
     image={{
       src: '~/assets/images/agentos/bwmdN12Ic2t.png',
-      alt: 'AI Agent and Business System Architecture',
+      alt: 'MoFA Core Architecture',
     }}
   >
     <Fragment slot="content">
       <ul class="space-y-2 mt-4">
-        <li>AI 是智能，不是业务规则系统 - AI 不负责权限、合规、数据一致性、审批流程等硬逻辑</li>
-        <li>企业仍需稳定性、高可用、可追溯 - 智能体可以执行，但核心记录系统不能替代</li>
-        <li>智能体是 orchestrator，而不是 ERP - 智能体补的是智能+自动化，不是结构化连续业务流程</li>
+        <li>**模块化与可组合性**：像搭积木一样构建智能体，极大提升开发效率和系统可维护性</li>
+        <li>**数据流驱动**：采用灵活的数据流模式，智能体之间松耦合，可以动态重组、拆解和复用</li>
+        <li>**跨平台兼容**：支持多模型（OpenAI，Qwen等）、多操作系统，保障技术自主权和选择灵活性</li>
       </ul>
     </Fragment>
   </Content>
@@ -97,24 +97,24 @@ const metadata = {
 
   <Content
     id="core-shifts"
-    tagline="核心变化"
-    title="未来5–10年企业架构的核心变化"
+    tagline="核心优势"
+    title="为什么选择 MoFA 构建智能体？"
     image={{
       src: '~/assets/images/agentos/change.png',
-      alt: 'Enterprise Architecture Evolution',
+      alt: 'MoFA Core Advantages',
     }}
   >
     <Fragment slot="content">
-      <div class="text-2xl font-bold mb-2">The Shift： From 'GUI-first' → 'Agent-first + Low-code Backbone'</div>
+      <div class="text-2xl font-bold mb-2">MoFA 与传统框架的核心差异</div>
 
       <div class="mt-4 grid md:grid-cols-2 gap-4">
         <div>
-          <div class="font-semibold text-blue-600 mb-1">以前的架构模式</div>
-          <div class="text-sm">先画 GUI → 再建业务逻辑 → 再写接口 → 再接入 BI → 最后才想 '要不要 AI'</div>
+          <div class="font-semibold text-blue-600 mb-1">传统AI应用框架</div>
+          <div class="text-sm">强调工具链集成，缺乏智能体层面的抽象和组合能力</div>
         </div>
         <div>
-          <div class="font-semibold text-blue-600 mb-1">未来的架构模式</div>
-          <div class="text-sm">先建数据层 → 再建可由智能体使用的 API 能力 → 再通过低代码构建业务功能块 → GUI 只是一个 '壳'</div>
+          <div class="font-semibold text-blue-600 mb-1">MoFA 框架</div>
+          <div class="text-sm">专注智能体层面的抽象和组合，数据流驱动架构更适合构建复杂、多步骤的自治系统</div>
         </div>
       </div>
     </Fragment>
@@ -123,33 +123,33 @@ const metadata = {
   <!-- Features Widget *************** -->
 
   <Features
-    tagline="适应策略"
-    title="未来的业务系统应该如何 '适应' 智能体平台？"
+    tagline="核心特性"
+    title="MoFA 的强大功能"
     items={[
       {
-        title: '从 GUI-first → API-first → Agent-first',
-        description: 'API 是入口，智能体是消费者，GUI 只是 fallback。系统必须满足：每个能力都能被智能体以工具调用；每个模块都有清晰的输入/输出；每个流程可以拆成可被智能体调用的步骤。',
-        icon: 'tabler:api',
-      },
-      {
-        title: '业务系统必须 "被 AI 调用" 和 "为 AI 设计"',
-        description: '系统对智能体友好比对人友好更重要。需要清晰的 schema、可由智能体模块组合的功能、更多的业务原子能力。',
-        icon: 'tabler:brain',
-      },
-      {
-        title: '为什么是低代码平台？',
-        description: '低代码平台天然具有标准化、可视化、自动生成 Schema、自带权限、安全、版本管理等特点，都是智能体更容易理解和使用的。',
+        title: '真正的模块化与可组合性',
+        description: '像搭积木一样构建智能体，极大提升开发效率和系统可维护性',
         icon: 'tabler:blocks',
       },
       {
-        title: '业务系统要 "AI Native" 而非 "AI Enabled"',
-        description: 'AI Native 的业务系统 = 智能体调用优先，包括内建的 RAG/Graph 能力、Workflow/Orchestration、事件流、权限/记录系统、工具注册中心。',
-        icon: 'tabler:cube',
+        title: '开发者友好',
+        description: '全栈 Python 支持，并兼容 Rust 高性能扩展，拥有强大的开发者生态潜力',
+        icon: 'tabler:code',
       },
       {
-        title: '业务系统变成 "智能体 + 人类" 的协同界面',
-        description: 'GUI 功能改变：让人类监督智能体；批准/修正智能体的动作；查看智能体的 "思维过程"；通过低代码配置业务逻辑。',
-        icon: 'tabler:users',
+        title: '开源核心',
+        description: '采用开源策略快速建立社区、积累用户并形成生态标准',
+        icon: 'tabler:git-branch',
+      },
+      {
+        title: '可视化工具 MoFA Stage',
+        description: '提供从可视化编排、调试到管理的端到端图形化工具，降低使用门槛，吸引非专业开发者',
+        icon: 'tabler:layout-dashboard',
+      },
+      {
+        title: '多模型与跨平台兼容',
+        description: '支持多模型（OpenAI，Qwen等）、多操作系统，保障用户的技术自主权和选择灵活性',
+        icon: 'tabler:device-laptop',
       },
     ]}
   />
@@ -157,20 +157,20 @@ const metadata = {
   <!-- Steps Widget ******************* -->
 
   <Steps
-    tagline="最终形态"
-    title="AI Native 的智能体系统实现路径"
+    tagline="快速开始"
+    title="使用 MoFA 构建智能体只需三步"
     items={[
       {
-        title: '人工操作 → 智能执行',
-        description: '智能体承担大部分执行工作，减少人类重复劳动',
+        title: '选择模块化组件',
+        description: '从丰富的预构建模块化组件库中选择所需功能',
       },
       {
-        title: '前端 GUI → 后端 API + 低代码逻辑',
-        description: 'API 成为系统核心入口，低代码构建业务逻辑',
+        title: '可视化编排或代码开发',
+        description: '通过 MoFA Stage 可视化编排或直接用 Python/Rust 代码开发智能体',
       },
       {
-        title: '人做流程 → 智能体做流程、人做监督',
-        description: '流程自动化执行，人类转向监督和决策角色',
+        title: '部署与管理',
+        description: '一键部署智能体，实现监控、扩缩容等全生命周期管理',
       },
     ]}
   />
@@ -180,19 +180,19 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: '立即了解',
-        href: 'https://github.com/aios-rs/mozhi',
+        text: '查看 GitHub',
+        href: 'https://github.com/mofa-org/mofa',
         target: '_blank',
-        icon: 'tabler:click',
+        icon: 'tabler:brand-github',
       },
     ]}
   >
     <Fragment slot="title">
-      <span class="sm:whitespace-nowrap">开启企业级智能体系统演进之旅</span>
+      <span class="sm:whitespace-nowrap">开始构建您的智能体</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      让您的业务系统在智能体时代焕发新生!
+      立即体验 MoFA 模块化智能体开发框架!
     </Fragment>
   </CallToAction>
 </Layout>
