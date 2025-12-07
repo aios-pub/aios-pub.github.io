@@ -1,5 +1,5 @@
 site:
-  name: AIOS
+  name: MoFaEE
   site: 'https://aios-rs.github.io'
   base: '/'
   trailingSlash: false
