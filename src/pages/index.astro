@@ -12,22 +12,37 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 const heroVideoUrl = "/assets/videos/ac4e42915f3905919be7879894e9930d.mp4";
 
 const metadata = {
-  title: 'MoFA - Modular Framework for Agents',
+  title: 'MoFA - Enterprise-Grade Modular Agent Framework',
   ignoreTitleTemplate: true,
-  description: '开源的模块化智能体开发框架，让开发者和企业快速构建、部署和管理下一代AI应用。',
+  description: '开源的模块化智能体开发框架，提供企业级SaaS和本地部署解决方案，满足不同规模企业的AI开发需求。',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero actions={[]} image={null}>
+  <Hero actions={[
+      {
+        variant: 'primary',
+        text: '查看商业方案',
+        href: '/pricing',
+        target: '_self',
+        icon: 'tabler:credit-card',
+      },
+      {
+        variant: 'secondary',
+        text: '开源版本',
+        href: 'https://github.com/mofa-org/mofa',
+        target: '_blank',
+        icon: 'tabler:brand-github',
+      },
+    ]} image={null}>
     <Fragment slot="title">
-      <span class="text-accent dark:text-white">MoFA - Modular Framework for Agents</span>
+      <span class="text-accent dark:text-white">MoFA - Enterprise-Grade Modular Agent Framework</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      开源的、模块化的、可组合的AI智能体开发框架，让普通人做非凡事。
+      开源的模块化智能体开发框架，提供企业级SaaS托管和本地部署解决方案，助力企业快速构建、部署和管理下一代AI应用。
     </Fragment>
 
     <Fragment slot="video">
@@ -68,9 +83,31 @@ const metadata = {
   <!-- Note Widget ******************* -->
 
   <Note
-    title="让智能体开发更简单"
-    description="MoFA 创新性的“数据流驱动”和“组合式AI”架构，解决了当前智能体开发技术门槛高、系统难以维护、组件复用性差等痛点。"
+    title="企业级智能体开发解决方案"
+    description="MoFA 采用 Open Core 模式，开源核心提供基础能力，商业版本提供企业级功能，满足从初创公司到大型企业的不同需求。"
   />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="enterprise-solutions"
+    tagline="商业版本优势"
+    title="为什么企业选择 MoFA 商业解决方案？"
+    image={{
+      src: '~/assets/images/agentos/enterprise.png',
+      alt: 'MoFA Enterprise Solutions',
+    }}
+  >
+    <Fragment slot="content">
+      <ul class="space-y-2 mt-4">
+        <li>**高可用性与稳定性**：SaaS 版本提供 99.9%  uptime 保障，企业版支持本地部署和高可用配置</li>
+        <li>**高级安全管控**：企业级身份认证、数据加密、访问控制，保障数据安全</li>
+        <li>**专业技术支持**：24/7 技术支持、专属客户经理、定制化培训服务</li>
+        <li>**性能分析与监控**：实时监控智能体运行状态，提供详细的性能分析报告</li>
+        <li>**定制化开发**：根据企业需求提供定制化功能开发和集成服务</li>
+      </ul>
+    </Fragment>
+  </Content>
 
   <!-- Content Widget **************** -->
 
@@ -123,8 +160,8 @@ const metadata = {
   <!-- Features Widget *************** -->
 
   <Features
-    tagline="核心特性"
-    title="MoFA 的强大功能"
+    tagline="全栈特性"
+    title="MoFA 开源与商业版本的核心功能"
     items={[
       {
         title: '真正的模块化与可组合性',
@@ -137,19 +174,24 @@ const metadata = {
         icon: 'tabler:code',
       },
       {
-        title: '开源核心',
-        description: '采用开源策略快速建立社区、积累用户并形成生态标准',
-        icon: 'tabler:git-branch',
-      },
-      {
         title: '可视化工具 MoFA Stage',
-        description: '提供从可视化编排、调试到管理的端到端图形化工具，降低使用门槛，吸引非专业开发者',
+        description: '提供从可视化编排、调试到管理的端到端图形化工具，降低使用门槛',
         icon: 'tabler:layout-dashboard',
       },
       {
-        title: '多模型与跨平台兼容',
-        description: '支持多模型（OpenAI，Qwen等）、多操作系统，保障用户的技术自主权和选择灵活性',
-        icon: 'tabler:device-laptop',
+        title: '企业级安全',
+        description: '商业版本提供身份认证、数据加密、访问控制等高级安全特性',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: '专业技术支持',
+        description: '商业版本提供 24/7 技术支持和专属客户经理服务',
+        icon: 'tabler:headset',
+      },
+      {
+        title: '灵活部署选项',
+        description: '支持 SaaS 托管、本地部署和混合云部署',
+        icon: 'tabler:server',
       },
     ]}
   />
@@ -180,7 +222,14 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: '查看 GitHub',
+        text: '立即咨询商业方案',
+        href: '/contact',
+        target: '_self',
+        icon: 'tabler:credit-card',
+      },
+      {
+        variant: 'secondary',
+        text: '免费试用开源版本',
         href: 'https://github.com/mofa-org/mofa',
         target: '_blank',
         icon: 'tabler:brand-github',
@@ -188,11 +237,11 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      <span class="sm:whitespace-nowrap">开始构建您的智能体</span>
+      <span class="sm:whitespace-nowrap">选择适合您的 MoFA 方案</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      立即体验 MoFA 模块化智能体开发框架!
+      无论是开源探索还是企业级应用，MoFA 都能满足您的需求!
     </Fragment>
   </CallToAction>
 </Layout>
