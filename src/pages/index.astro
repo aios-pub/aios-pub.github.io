@@ -12,9 +12,9 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 const heroVideoUrl = "/assets/videos/ac4e42915f3905919be7879894e9930d.mp4";
 
 const metadata = {
-  title: 'Enterprise Modular Agent Framework',
+  title: 'AIOS - 面向企业的AI解决方案平台',
   ignoreTitleTemplate: true,
-  description: '开源的模块化智能体开发框架，提供企业级SaaS和本地部署解决方案，满足不同规模企业的AI开发需求。',
+  description: 'AIOS是专注于为企业提供全方位AI解决方案的平台。基于MoFA企业级智能体框架，提供从AI战略咨询、解决方案设计、到系统部署和运维的全流程服务。',
 };
 ---
 
@@ -24,25 +24,25 @@ const metadata = {
   <Hero actions={[
       {
         variant: 'primary',
-        text: '查看商业方案',
-        href: '/pricing',
+        text: '咨询AI方案',
+        href: '/contact',
         target: '_self',
-        icon: 'tabler:credit-card',
+        icon: 'tabler:headset',
       },
       {
         variant: 'secondary',
-        text: '开源版本',
-        href: 'https://github.com/mofa-org/mofa',
-        target: '_blank',
-        icon: 'tabler:brand-github',
+        text: '了解服务',
+        href: '/services',
+        target: '_self',
+        icon: 'tabler:info-circle',
       },
     ]} image={null}>
     <Fragment slot="title">
-      <span class="text-accent dark:text-white">Enterprise Modular Agent Framework</span>
+      <span class="text-accent dark:text-white">AIOS - 面向企业的AI解决方案平台</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      开源的模块化智能体开发框架，提供企业级SaaS托管和本地部署解决方案，助力企业快速构建、部署和管理下一代AI应用。
+      基于MoFA企业级框架，提供从咨询到部署的全流程AI服务。智能驱动，业务增长。
     </Fragment>
 
     <Fragment slot="video">
@@ -83,28 +83,27 @@ const metadata = {
   <!-- Note Widget ******************* -->
 
   <Note
-    title="企业级智能体开发解决方案"
-    description="MoFA 采用 Open Core 模式，开源核心提供基础能力，商业版本提供企业级功能，满足从初创公司到大型企业的不同需求。"
+    title="AIOS的核心优势"
+    description="AIOS采用Open Core模式，基于开源MoFA框架为企业提供专业AI解决方案服务。从战略咨询到系统部署，全程陪伴企业AI转型。"
   />
 
   <!-- Content Widget **************** -->
 
   <Content
-    id="enterprise-solutions"
-    tagline="商业版本优势"
-    title="为什么企业选择 MoFA 商业解决方案？"
+    id="professional-services"
+    tagline="专业服务"
+    title="从战略到执行，全程陪伴"
     image={{
       src: '~/assets/images/agentos/enterprise.png',
-      alt: 'MoFA Enterprise Solutions',
+      alt: 'AIOS Professional Services',
     }}
   >
     <Fragment slot="content">
       <ul class="space-y-2 mt-4">
-        <li>高可用性与稳定性：SaaS 版本提供 99.9%  uptime 保障，企业版支持本地部署和高可用配置</li>
-        <li>高级安全管控：企业级身份认证、数据加密、访问控制，保障数据安全</li>
-        <li>专业技术支持：24/7 技术支持、专属客户经理、定制化培训服务</li>
-        <li>性能分析与监控：实时监控智能体运行状态，提供详细的性能分析报告</li>
-        <li>定制化开发：根据企业需求提供定制化功能开发和集成服务</li>
+        <li><strong>AI战略咨询：</strong>深入评估企业AI成熟度，识别高价值应用场景，制定切实可行的AI转型路线图</li>
+        <li><strong>定制化解决方案：</strong>基于MoFA企业级框架，快速构建符合企业业务需求的AI智能体系统</li>
+        <li><strong>端到端交付：</strong>从需求分析、方案设计、系统开发到部署上线的全流程交付服务</li>
+        <li><strong>持续优化服务：</strong>提供7x24监控、故障响应和持续优化，确保AI系统稳定运行并持续创造价值</li>
       </ul>
     </Fragment>
   </Content>
@@ -112,10 +111,10 @@ const metadata = {
   <!-- Content Widget **************** -->
 
   <Content
-    id="architecture"
+    id="technical-foundation"
     isReversed
-    tagline="核心架构"
-    title="数据流驱动的组合式AI架构"
+    tagline="技术基石"
+    title="基于MoFA企业级框架"
     image={{
       src: '~/assets/images/agentos/bwmdN12Ic2t.png',
       alt: 'MoFA Core Architecture',
@@ -123,9 +122,10 @@ const metadata = {
   >
     <Fragment slot="content">
       <ul class="space-y-2 mt-4">
-        <li>模块化与可组合性：像搭积木一样构建智能体，极大提升开发效率和系统可维护性</li>
-        <li>数据流驱动：采用灵活的数据流模式，智能体之间松耦合，可以动态重组、拆解和复用</li>
-        <li>跨平台兼容：支持多模型（OpenAI，Qwen等）、多操作系统，保障技术自主权和选择灵活性</li>
+        <li><strong>模块化架构：</strong>像搭积木一样构建智能体，极大提升开发效率和系统可维护性</li>
+        <li><strong>数据流驱动：</strong>采用灵活的数据流模式，智能体之间松耦合，可以动态重组、拆解和复用</li>
+        <li><strong>企业级特性：</strong>支持高可用部署、身份认证、数据加密、访问控制等企业级安全特性</li>
+        <li><strong>多模型支持：</strong>兼容OpenAI、Qwen等多种主流AI模型，保障技术自主权和选择灵活性</li>
       </ul>
     </Fragment>
   </Content>
@@ -133,25 +133,25 @@ const metadata = {
   <!-- Content Widget **************** -->
 
   <Content
-    id="core-shifts"
-    tagline="核心优势"
-    title="为什么选择 MoFA 构建智能体？"
+    id="competitive-advantage"
+    tagline="差异化优势"
+    title="为什么选择AIOS？"
     image={{
       src: '~/assets/images/agentos/change.png',
-      alt: 'MoFA Core Advantages',
+      alt: 'AIOS Competitive Advantage',
     }}
   >
     <Fragment slot="content">
-      <div class="text-2xl font-bold mb-2">MoFA 与传统框架的核心差异</div>
+      <div class="text-2xl font-bold mb-2">AIOS与传统AI服务商的核心差异</div>
 
       <div class="mt-4 grid md:grid-cols-2 gap-4">
         <div>
-          <div class="font-semibold text-blue-600 mb-1">传统AI应用框架</div>
-          <div class="text-sm">强调工具链集成，缺乏智能体层面的抽象和组合能力</div>
+          <div class="font-semibold text-red-600 mb-1">传统AI服务商</div>
+          <div class="text-sm">提供标准化工具或单一咨询服务，缺乏技术框架支撑，难以快速落地和持续优化</div>
         </div>
         <div>
-          <div class="font-semibold text-blue-600 mb-1">MoFA 框架</div>
-          <div class="text-sm">专注智能体层面的抽象和组合，数据流驱动架构更适合构建复杂、多步骤的自治系统</div>
+          <div class="font-semibold text-blue-600 mb-1">AIOS解决方案平台</div>
+          <div class="text-sm">基于MoFA企业级框架，提供从咨询到部署的一站式服务，快速交付、持续优化、全程可控</div>
         </div>
       </div>
     </Fragment>
@@ -160,38 +160,38 @@ const metadata = {
   <!-- Features Widget *************** -->
 
   <Features
-    tagline="全栈特性"
-    title="MoFA 开源与商业版本的核心功能"
+    tagline="全方位服务体系"
+    title="AIOS六大专业服务"
     items={[
       {
-        title: '真正的模块化与可组合性',
-        description: '像搭积木一样构建智能体，极大提升开发效率和系统可维护性',
-        icon: 'tabler:blocks',
+        title: 'AI战略咨询',
+        description: 'AI成熟度评估、场景识别、ROI评估、转型路径规划',
+        icon: 'tabler:brain',
       },
       {
-        title: '开发者友好',
-        description: '全栈 Python 支持，并兼容 Rust 高性能扩展，拥有强大的开发者生态潜力',
-        icon: 'tabler:code',
+        title: '解决方案设计',
+        description: '系统架构设计、模型选型、数据方案设计、风险评估',
+        icon: 'tabler:schema',
       },
       {
-        title: '可视化工具 MoFA Stage',
-        description: '提供从可视化编排、调试到管理的端到端图形化工具，降低使用门槛',
-        icon: 'tabler:layout-dashboard',
+        title: '智能体系统开发',
+        description: '基于MoFA框架快速构建和部署定制化AI智能体系统',
+        icon: 'tabler:robot',
       },
       {
-        title: '企业级安全',
-        description: '商业版本提供身份认证、数据加密、访问控制等高级安全特性',
-        icon: 'tabler:shield-lock',
+        title: '数据工程服务',
+        description: '数据清洗、标注、质量管理、数据管道构建',
+        icon: 'tabler:database',
       },
       {
-        title: '专业技术支持',
-        description: '商业版本提供 24/7 技术支持和专属客户经理服务',
+        title: '模型优化服务',
+        description: 'Prompt工程、模型微调、RAG构建、性能调优',
+        icon: 'tabler:adjustments',
+      },
+      {
+        title: '运维支持服务',
+        description: '7x24监控、故障响应、系统优化、持续迭代',
         icon: 'tabler:headset',
-      },
-      {
-        title: '灵活部署选项',
-        description: '支持 SaaS 托管、本地部署和混合云部署',
-        icon: 'tabler:server',
       },
     ]}
   />
@@ -199,20 +199,20 @@ const metadata = {
   <!-- Steps Widget ******************* -->
 
   <Steps
-    tagline="快速开始"
-    title="使用 MoFA 构建智能体只需三步"
+    tagline="合作流程"
+    title="与AIOS合作的简单流程"
     items={[
       {
-        title: '选择模块化组件',
-        description: '从丰富的预构建模块化组件库中选择所需功能',
+        title: '需求诊断',
+        description: '深入了解企业业务需求和AI应用场景，评估可行性和预期收益',
       },
       {
-        title: '可视化编排或代码开发',
-        description: '通过 MoFA Stage 可视化编排或直接用 Python/Rust 代码开发智能体',
+        title: '方案设计',
+        description: '基于MoFA框架设计定制化AI解决方案，明确技术路径和交付计划',
       },
       {
-        title: '部署与管理',
-        description: '一键部署智能体，实现监控、扩缩容等全生命周期管理',
+        title: '快速交付',
+        description: '采用敏捷开发模式，快速构建、部署和优化AI智能体系统',
       },
     ]}
   />
@@ -222,26 +222,26 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: '立即咨询商业方案',
+        text: '咨询AI方案',
         href: '/contact',
         target: '_self',
-        icon: 'tabler:credit-card',
+        icon: 'tabler:headset',
       },
       {
         variant: 'secondary',
-        text: '免费试用开源版本',
-        href: 'https://github.com/mofa-org/mofa',
-        target: '_blank',
-        icon: 'tabler:brand-github',
+        text: '了解服务详情',
+        href: '/services',
+        target: '_self',
+        icon: 'tabler:info-circle',
       },
     ]}
   >
     <Fragment slot="title">
-      <span class="sm:whitespace-nowrap">选择适合您的 MoFA 方案</span>
+      <span class="sm:whitespace-nowrap">开启您的AI转型之旅</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      无论是开源探索还是企业级应用，MoFA 都能满足您的需求!
+      AIOS专业团队随时准备为您提供AI战略咨询和解决方案设计服务!
     </Fragment>
   </CallToAction>
 </Layout>

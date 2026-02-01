@@ -4,10 +4,12 @@ import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: '关于我们',
+  description: '了解AIOS - 基于MoFA框架的专业AI解决方案平台',
 };
 ---
 
@@ -15,213 +17,220 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="About us"
+    tagline="关于我们"
     image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
+      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AIOS Team',
     }}
   >
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
+      <span class="text-accent dark:text-white">智能驱动，业务增长</span><br />
+      AIOS - 企业级AI解决方案专家
     </Fragment>
 
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      AIOS是基于MoFA企业级智能体框架的专业AI解决方案平台。我们致力于为企业提供从AI战略咨询、解决方案设计到系统部署和运维的全流程服务，助力企业实现AI转型，创造真实业务价值。
     </Fragment>
   </Hero>
 
   <!-- Stats Widget ****************** -->
 
   <Stats
-    title="Statistics about us"
+    title="AIOS平台数据"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: '服务客户', amount: '50+' },
+      { title: '成功项目', amount: '100+' },
+      { title: '行业覆盖', amount: '10+' },
+      { title: '技术专家', amount: '30+' },
     ]}
   />
 
-  <!-- Features3 Widget ************** -->
+  <!-- Features3 Widget: 核心价值 -->
 
   <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
+    title="我们的使命"
+    subtitle="让每一个企业都能轻松拥抱AI，释放数据价值，驱动业务增长"
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
+        title: 'AI民主化',
+        description: '通过MoFA开源框架和AIOS专业服务，降低企业AI应用门槛，让更多企业享受到AI技术带来的价值',
+        icon: 'tabler:rocket',
       },
       {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
+        title: '价值创造',
+        description: '专注于解决真实业务问题，以ROI为导向，确保AI投入能够带来可衡量的业务价值',
+        icon: 'tabler:trending-up',
       },
       {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
+        title: '长期陪伴',
+        description: '不只是交付项目，更是长期合作伙伴。从咨询到部署，再到持续优化，全程陪伴企业AI成长之路',
+        icon: 'tabler:users',
       },
     ]}
   />
 
-  <!-- Features3 Widget ************** -->
+  <!-- Features3 Widget: 核心优势 -->
 
   <Features3
     columns={3}
     isAfterContent={true}
     items={[
       {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
+        title: '技术领先',
+        description: '基于MoFA企业级框架，拥有模块化、可组合的智能体架构，快速构建复杂AI系统',
+        icon: 'tabler:brand-codesandbox',
       },
       {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
+        title: '行业经验',
+        description: '深耕金融、制造、零售、医疗等多个行业，积累了丰富的AI落地经验和最佳实践',
+        icon: 'tabler:briefcase',
       },
       {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
+        title: '专业团队',
+        description: '由AI领域资深专家组成，具备深厚的学术背景和丰富的工业界实践经验',
+        icon: 'tabler:users',
       },
       {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
+        title: '敏捷交付',
+        description: '采用敏捷开发方法论，快速迭代，持续交付，确保项目按时保质完成',
+        icon: 'tabler:bolt',
       },
       {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
+        title: '客户成功',
+        description: '以客户成功为导向，不仅交付系统，更确保客户能够使用好、维护好AI系统',
+        icon: 'tabler:trophy',
       },
       {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
+        title: '持续创新',
+        description: '紧跟AI技术发展前沿，持续将最新技术应用到产品和服务中，为客户创造更大价值',
+        icon: 'tabler:lightbulb',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
+      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'AIOS Innovation',
     }}
   />
 
-  <!-- Steps2 Widget ****************** -->
+  <!-- Steps2 Widget: 我们的理念 -->
 
   <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
+    title="我们的价值观"
+    subtitle="这些价值观指导我们的每一个决策和行动"
     items={[
       {
-        title: 'Customer-centric approach',
+        title: '客户第一',
         description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+          '客户成功是我们成功的唯一标准。我们始终将客户利益放在首位，以客户需求为导向，提供超出预期的服务。',
       },
       {
-        title: 'Constant Improvement',
+        title: '技术为本',
         description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+          '技术是我们的立身之本。我们持续投入技术研发，保持技术领先优势，为客户提供最先进的AI解决方案。',
       },
       {
-        title: 'Ethical Practices',
+        title: '开放协作',
         description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+          '拥抱开源，相信开放协作的力量。MoFA框架开源体现了我们的技术自信，也欢迎更多开发者加入生态。',
       },
     ]}
   />
 
-  <!-- Steps2 Widget ****************** -->
+  <!-- Steps2 Widget: 发展历程 -->
 
   <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
+    title="发展历程"
+    subtitle="从技术创新到商业实践"
     isReversed={true}
     callToAction={{
-      text: 'See more',
-      href: '/',
+      text: '加入我们',
+      href: '/contact',
     }}
     items={[
       {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
+        title: 'MoFA框架诞生',
+        description: '团队开始研发模块化智能体框架，探索更灵活的AI应用开发方式',
+        icon: 'tabler:seed',
       },
       {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
+        title: 'MoFA开源',
+        description: 'MoFA框架正式开源，为开发者提供强大的智能体开发工具',
+        icon: 'tabler:brand-github',
       },
       {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
+        title: 'AIOS成立',
+        description: '基于MoFA框架，成立AIOS商业服务，为企业提供专业AI解决方案',
+        icon: 'tabler:building',
       },
     ]}
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Features2 Widget: 技术生态 -->
 
   <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
+    title="技术生态"
+    tagline="MoFA & AIOS"
     columns={2}
     items={[
       {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
+        title: 'MoFA开源社区',
+        description: '访问MoFA开源项目，体验强大的模块化智能体开发框架',
+        icon: 'tabler:brand-github',
+        link: 'https://github.com/mofa-org/mofa',
+      },
+      {
+        title: 'AIOS商业服务',
+        description: '联系AIOS专业团队，获取企业级AI解决方案服务',
+        icon: 'tabler:headset',
+        link: '/contact',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget: 联系我们 -->
+
+  <Features2
+    title="联系我们"
+    tagline="开启AI转型之旅"
+    columns={3}
+    items={[
+      {
+        title: '商务咨询',
+        description: '了解AIOS服务，获取定制化AI解决方案',
+        icon: 'tabler:mail',
+      },
+      {
+        title: '技术交流',
+        description: '加入MoFA开源社区，与开发者交流技术',
         icon: 'tabler:messages',
       },
       {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
+        title: '加入我们',
+        description: 'AIOS正在寻找志同道合的AI技术人才',
+        icon: 'tabler:user-plus',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="准备好开始您的AI项目了吗？"
+    subtitle="AIOS专业团队随时准备为您提供AI咨询服务，量身定制最适合的AI解决方案"
+    actions={[
+      {
+        variant: 'primary',
+        text: '咨询服务',
+        href: '/contact',
         icon: 'tabler:headset',
+      },
+      {
+        variant: 'secondary',
+        text: '了解服务',
+        href: '/services',
+        icon: 'tabler:info-circle',
       },
     ]}
   />

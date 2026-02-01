@@ -3,76 +3,160 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import wechatImage from '~/assets/images/wechat.jpg';
 
 const metadata = {
-  title: 'Contact',
+  title: '联系我们',
+  description: '联系AIOS专业团队，获取AI咨询服务和解决方案',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText tagline="联系我们" title="开启AI转型之旅" subtitle="AIOS专业团队随时准备为您提供AI咨询服务" />
 
   <ContactUs
     id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    title="给我们留言"
+    subtitle="请填写以下表单，我们会在24小时内回复您。您也可以通过下方的联系方式直接与我们取得联系。"
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Name',
+        label: '姓名',
       },
       {
         type: 'email',
         name: 'email',
-        label: 'Email',
+        label: '邮箱',
+      },
+      {
+        type: 'text',
+        name: 'company',
+        label: '公司名称',
       },
     ]}
     textarea={{
-      label: 'Message',
+      label: '留言内容',
     }}
     disclaimer={{
       label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+        '提交此表单即表示您同意我们收集并处理您的个人信息，仅用于与您沟通相关服务。',
     }}
-    description="Our support team typically responds within 24 business hours."
+    description="我们的支持团队通常会在24小时内回复。"
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Features2 Widget: 服务分类 -->
 
   <Features2
-    title="We are here to help!"
+    title="服务咨询"
+    subtitle="根据您的需求选择相应的服务类型"
+    columns={2}
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
+        title: '商务咨询',
+        description: '了解AIOS服务方案、获取报价、商务合作等商务相关咨询，我们会安排专属客户经理与您联系。',
+        icon: 'tabler:briefcase',
       },
       {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+        title: '技术咨询',
+        description: 'MoFA框架技术问题、AI解决方案设计咨询、系统架构讨论等技术相关咨询，我们的技术专家将为您解答。',
+        icon: 'tabler:code',
       },
       {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+        title: '合作咨询',
+        description: '技术合作伙伴、行业解决方案合作、渠道代理等合作咨询，共同拓展AI服务市场。',
+        icon: 'tabler:users',
       },
       {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
+        title: '媒体联系',
+        description: '媒体采访、新闻报道、演讲邀请等媒体相关事宜，请联系我们的公关团队。',
+        icon: 'tabler:news',
       },
+    ]}
+  />
+
+  <!-- Features2 Widget: 联系方式 -->
+
+  <Features2
+    title="联系方式"
+    subtitle="多种方式与我们取得联系"
+    columns={4}
+    items={[
       {
-        title: 'Email',
-        description: 'contact@support.com',
+        title: '电子邮箱',
+        description: 'contact@aios-rs.com',
         icon: 'tabler:mail',
       },
       {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
+        title: '商务热线',
+        description: '400-xxx-xxxx',
+        icon: 'tabler:phone',
+      },
+      {
+        title: '技术社区',
+        description: 'github.com/mofa-org/mofa',
+        icon: 'tabler:brand-github',
+      },
+      {
+        title: '工作时间',
+        description: '周一至周五 9:00-18:00',
+        icon: 'tabler:clock',
+      },
+    ]}
+  />
+
+  <!-- 微信二维码 -->
+  <section class="mx-auto mt-16 max-w-5xl px-4 sm:mt-24 sm:px-6">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">
+        微信联系我们
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
+        扫描下方二维码，关注AIOS官方微信，获取最新资讯和服务
+      </p>
+      <div class="mx-auto mt-8 flex justify-center">
+        <img
+          src={wechatImage.src}
+          alt="AIOS微信二维码"
+          class="h-80 w-80 rounded-lg object-cover shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="还可以通过这些方式了解我们"
+    subtitle="探索AIOS的更多资源"
+    actions={[
+      {
+        variant: 'secondary',
+        text: '了解服务',
+        href: '/services',
+        icon: 'tabler:info-circle',
+      },
+      {
+        variant: 'secondary',
+        text: '查看定价',
+        href: '/pricing',
+        icon: 'tabler:credit-card',
+      },
+      {
+        variant: 'secondary',
+        text: '关于我们',
+        href: '/about',
+        icon: 'tabler:users',
+      },
+      {
+        variant: 'primary',
+        text: 'MoFA开源项目',
+        href: 'https://github.com/mofa-org/mofa',
+        icon: 'tabler:brand-github',
+        target: '_blank',
       },
     ]}
   />

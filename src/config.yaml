@@ -1,5 +1,5 @@
 site:
-  name: MoFaEE
+  name: AIOS
   site: 'https://aios-rs.github.io'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: AIOS - 面向企业的AI解决方案平台
+    template: '%s — AIOS'
+  description: "AIOS是专注于为企业提供全方位AI解决方案的平台。基于MoFA企业级智能体框架，提供从AI战略咨询、解决方案设计、到系统部署和运维的全流程服务。"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: AIOS
     images:
       - url: '~/assets/images/default.png'
         width: 1200
