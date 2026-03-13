@@ -10,7 +10,7 @@ tags:
   - technology
   - enterprise
 metadata:
-  canonical: https://aios.pub/aios-technology-capabilities
+  canonical: https://aios.pub/blog/aios-technology-capabilities
 ---
 
 在AI技术快速迭代的今天，选择一个拥有深厚技术积累的合作伙伴至关重要。AIOS凭借全栈AI技术能力，为个人开发者和企业客户提供可靠、高效、创新的AI解决方案。
