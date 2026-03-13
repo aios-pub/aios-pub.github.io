@@ -11,14 +11,16 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 const metadata = {
   title: 'aios.pub - 探索AI无限可能',
   ignoreTitleTemplate: true,
-  description: 'AIOS是您的AI探索伙伴——汇聚前沿AI项目、核心技术洞察、创新编程方法论与深度评测。提供从战略咨询到系统部署的全栈AI解决方案。',
+  description:
+    'AIOS是您的AI探索伙伴——汇聚前沿AI项目、核心技术洞察、创新编程方法论与深度评测。提供从战略咨询到系统部署的全栈AI解决方案。',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero actions={[
+  <Hero
+    actions={[
       {
         variant: 'primary',
         text: '开启AI之旅',
@@ -33,7 +35,9 @@ const metadata = {
         target: '_self',
         icon: 'tabler:building',
       },
-    ]} image={null}>
+    ]}
+    image={null}
+  >
     <Fragment slot="title">
       <span class="text-accent dark:text-white">AIOS</span><br />
       <span class="text-2xl md:text-3xl">探索AI的无限可能</span>
@@ -113,19 +117,31 @@ const metadata = {
       <ul class="space-y-3 mt-4">
         <li class="flex items-start gap-2">
           <span class="text-blue-500 mt-1">▸</span>
-          <span><strong class="text-gray-900 dark:text-white">知识引擎：</strong>前沿项目展示、技术深度解析、创新方法论分享</span>
+          <span
+            ><strong class="text-gray-900 dark:text-white">知识引擎：</strong
+            >前沿项目展示、技术深度解析、创新方法论分享</span
+          >
         </li>
         <li class="flex items-start gap-2">
           <span class="text-blue-500 mt-1">▸</span>
-          <span><strong class="text-gray-900 dark:text-white">决策引擎：</strong>专业AI工具评测，为您的技术选型提供可靠依据</span>
+          <span
+            ><strong class="text-gray-900 dark:text-white">决策引擎：</strong
+            >专业AI工具评测，为您的技术选型提供可靠依据</span
+          >
         </li>
         <li class="flex items-start gap-2">
           <span class="text-blue-500 mt-1">▸</span>
-          <span><strong class="text-gray-900 dark:text-white">创新引擎：</strong>VibeCoding方法论，用直觉与创造力重新定义编程</span>
+          <span
+            ><strong class="text-gray-900 dark:text-white">创新引擎：</strong
+            >VibeCoding方法论，用直觉与创造力重新定义编程</span
+          >
         </li>
         <li class="flex items-start gap-2">
           <span class="text-blue-500 mt-1">▸</span>
-          <span><strong class="text-gray-900 dark:text-white">服务引擎：</strong>全栈AI解决方案，从战略咨询到系统落地全程护航</span>
+          <span
+            ><strong class="text-gray-900 dark:text-white">服务引擎：</strong
+            >全栈AI解决方案，从战略咨询到系统落地全程护航</span
+          >
         </li>
       </ul>
     </Fragment>

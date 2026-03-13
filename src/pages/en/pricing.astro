@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayoutEn.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Pricing from '~/components/widgets/Pricing.astro';
+import PricingWidget from '~/components/widgets/Pricing.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
@@ -23,10 +23,10 @@ const metadata = {
 
   <!-- Pricing Widget *************** -->
 
-  <Pricing
+  <PricingWidget
     title="Service Plans"
     subtitle="Transparent pricing, no hidden fees"
-    items={[
+    prices={[
       {
         title: 'Starter',
         subtitle: 'For small projects',

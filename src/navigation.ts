@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -224,7 +224,11 @@ export const footerDataEn = {
     { text: 'Privacy Policy', href: getPermalink('/en/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'WeChat Official Account: 架构师部落', icon: 'tabler:brand-wechat', href: getPermalink('/en/contact') },
+    {
+      ariaLabel: 'WeChat Official Account: 架构师部落',
+      icon: 'tabler:brand-wechat',
+      href: getPermalink('/en/contact'),
+    },
     { ariaLabel: 'Video Account: aios-rs', icon: 'tabler:video', href: getPermalink('/en/contact') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/aios-rs' },
   ],

@@ -11,14 +11,16 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 const metadata = {
   title: 'aios.pub - Explore the Infinite Possibilities of AI',
   ignoreTitleTemplate: true,
-  description: 'AIOS is your AI exploration partner - bringing together cutting-edge projects, technical insights, innovative methodologies, and in-depth reviews. Full-stack AI solutions from strategy to deployment.',
+  description:
+    'AIOS is your AI exploration partner - bringing together cutting-edge projects, technical insights, innovative methodologies, and in-depth reviews. Full-stack AI solutions from strategy to deployment.',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero actions={[
+  <Hero
+    actions={[
       {
         variant: 'primary',
         text: 'Start AI Journey',
@@ -33,14 +35,17 @@ const metadata = {
         target: '_self',
         icon: 'tabler:building',
       },
-    ]} image={null}>
+    ]}
+    image={null}
+  >
     <Fragment slot="title">
       <span class="text-accent dark:text-white">AIOS</span><br />
       <span class="text-2xl md:text-3xl">Explore the Infinite Possibilities of AI</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Your AI exploration partner — bringing together cutting-edge projects, technical insights, innovative methodologies, and in-depth reviews.<br class="hidden md:block" />
+      Your AI exploration partner — bringing together cutting-edge projects, technical insights, innovative
+      methodologies, and in-depth reviews.<br class="hidden md:block" />
       Full-stack AI solutions from strategy to deployment, empowering enterprise digital transformation.
     </Fragment>
   </Hero>
@@ -60,37 +65,43 @@ const metadata = {
     items={[
       {
         title: 'Cutting-edge Projects',
-        description: 'Curated AI projects from intelligent agents to automation tools, exploring the infinite boundaries of AI technology',
+        description:
+          'Curated AI projects from intelligent agents to automation tools, exploring the infinite boundaries of AI technology',
         icon: 'tabler:rocket',
         link: '/en/projects',
       },
       {
         title: 'Technical Insights',
-        description: 'Deep analysis of core AI technologies, from Prompt engineering to model fine-tuning, master the essence of AI development',
+        description:
+          'Deep analysis of core AI technologies, from Prompt engineering to model fine-tuning, master the essence of AI development',
         icon: 'tabler:bulb',
         link: '/en/skills',
       },
       {
         title: 'VibeCoding',
-        description: 'Innovative programming methodology — write code with intuition and creativity, unleash the art of programming in the AI era',
+        description:
+          'Innovative programming methodology — write code with intuition and creativity, unleash the art of programming in the AI era',
         icon: 'tabler:code',
         link: '/en/vibecoding',
       },
       {
         title: 'In-depth Reviews',
-        description: 'Professional and objective AI tool and model reviews, helping you find the optimal solution among countless choices',
+        description:
+          'Professional and objective AI tool and model reviews, helping you find the optimal solution among countless choices',
         icon: 'tabler:chart-bar',
         link: '/en/reviews',
       },
       {
         title: 'Enterprise Solutions',
-        description: 'Full-stack AI solutions from strategic consulting to system deployment, empowering enterprise transformation',
+        description:
+          'Full-stack AI solutions from strategic consulting to system deployment, empowering enterprise transformation',
         icon: 'tabler:building',
         link: '/en/services',
       },
       {
         title: 'Tech Community',
-        description: 'Join the AI developer community and explore the future of AI technology with enthusiasts worldwide',
+        description:
+          'Join the AI developer community and explore the future of AI technology with enthusiasts worldwide',
         icon: 'tabler:users',
         href: '#',
       },
@@ -109,23 +120,37 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <p class="text-lg mb-4 font-medium">AIOS is a comprehensive AI platform covering the complete ecosystem of content, technology, and services:</p>
+      <p class="text-lg mb-4 font-medium">
+        AIOS is a comprehensive AI platform covering the complete ecosystem of content, technology, and services:
+      </p>
       <ul class="space-y-3 mt-4">
         <li class="flex items-start gap-2">
           <span class="text-blue-500 mt-1">▸</span>
-          <span><strong class="text-gray-900 dark:text-white">Knowledge Engine:</strong> Cutting-edge project showcases, deep technical analysis, and innovative methodology sharing</span>
+          <span
+            ><strong class="text-gray-900 dark:text-white">Knowledge Engine:</strong> Cutting-edge project showcases, deep
+            technical analysis, and innovative methodology sharing</span
+          >
         </li>
         <li class="flex items-start gap-2">
           <span class="text-blue-500 mt-1">▸</span>
-          <span><strong class="text-gray-900 dark:text-white">Decision Engine:</strong> Professional AI tool reviews providing reliable basis for your technology selection</span>
+          <span
+            ><strong class="text-gray-900 dark:text-white">Decision Engine:</strong> Professional AI tool reviews providing
+            reliable basis for your technology selection</span
+          >
         </li>
         <li class="flex items-start gap-2">
           <span class="text-blue-500 mt-1">▸</span>
-          <span><strong class="text-gray-900 dark:text-white">Innovation Engine:</strong> VibeCoding methodology, redefining programming with intuition and creativity</span>
+          <span
+            ><strong class="text-gray-900 dark:text-white">Innovation Engine:</strong> VibeCoding methodology, redefining
+            programming with intuition and creativity</span
+          >
         </li>
         <li class="flex items-start gap-2">
           <span class="text-blue-500 mt-1">▸</span>
-          <span><strong class="text-gray-900 dark:text-white">Service Engine:</strong> Full-stack AI solutions, from strategic consulting to implementation</span>
+          <span
+            ><strong class="text-gray-900 dark:text-white">Service Engine:</strong> Full-stack AI solutions, from strategic
+            consulting to implementation</span
+          >
         </li>
       </ul>
     </Fragment>
@@ -148,19 +173,29 @@ const metadata = {
       <ul class="space-y-3 mt-4">
         <li class="flex items-start gap-2">
           <span class="text-green-500 mt-1">✓</span>
-          <span><strong>Agent Development</strong> — Modular architecture design for rapid complex AI system construction</span>
+          <span
+            ><strong>Agent Development</strong> — Modular architecture design for rapid complex AI system construction</span
+          >
         </li>
         <li class="flex items-start gap-2">
           <span class="text-green-500 mt-1">✓</span>
-          <span><strong>Multi-Model Integration</strong> — Seamless connection with OpenAI, Claude, Qwen and other mainstream models</span>
+          <span
+            ><strong>Multi-Model Integration</strong> — Seamless connection with OpenAI, Claude, Qwen and other mainstream
+            models</span
+          >
         </li>
         <li class="flex items-start gap-2">
           <span class="text-green-500 mt-1">✓</span>
-          <span><strong>Enterprise-Grade</strong> — High availability deployment, secure authentication, compliance audit all included</span>
+          <span
+            ><strong>Enterprise-Grade</strong> — High availability deployment, secure authentication, compliance audit all
+            included</span
+          >
         </li>
         <li class="flex items-start gap-2">
           <span class="text-green-500 mt-1">✓</span>
-          <span><strong>Full-Stack Coverage</strong> — End-to-end technology from data processing to model deployment</span>
+          <span
+            ><strong>Full-Stack Coverage</strong> — End-to-end technology from data processing to model deployment</span
+          >
         </li>
       </ul>
     </Fragment>
@@ -174,12 +209,14 @@ const metadata = {
     items={[
       {
         title: 'Explore & Discover',
-        description: 'Browse cutting-edge projects, technical insights, and in-depth reviews to understand the latest AI trends',
+        description:
+          'Browse cutting-edge projects, technical insights, and in-depth reviews to understand the latest AI trends',
         icon: 'tabler:compass',
       },
       {
         title: 'Deep Learning',
-        description: 'Master core skills like Prompt engineering, model fine-tuning, and agent development to become an AI developer',
+        description:
+          'Master core skills like Prompt engineering, model fine-tuning, and agent development to become an AI developer',
         icon: 'tabler:school',
       },
       {
@@ -189,7 +226,8 @@ const metadata = {
       },
       {
         title: 'Enterprise Empowerment',
-        description: 'Need professional support? Our team provides full-stack AI services from strategy to implementation',
+        description:
+          'Need professional support? Our team provides full-stack AI services from strategy to implementation',
         icon: 'tabler:building',
       },
     ]}
@@ -219,7 +257,9 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Whether you're an AI explorer or enterprise decision-maker, AIOS is your trusted partner.<br class="hidden md:block" />
+      Whether you're an AI explorer or enterprise decision-maker, AIOS is your trusted partner.<br
+        class="hidden md:block"
+      />
       Let's explore the infinite possibilities of AI together!
     </Fragment>
   </CallToAction>
