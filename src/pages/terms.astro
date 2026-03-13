@@ -1,0 +1,81 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+
+const metadata = {
+  title: '服务条款 - aios.pub',
+  description: 'AIOS服务条款，使用本网站前请仔细阅读',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="服务条款" title="Terms of Service" subtitle="使用 AIOS 服务前请仔细阅读以下条款" />
+
+  <section class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="prose prose-slate dark:prose-invert max-w-none">
+      <p class="text-lg text-slate-600 dark:text-slate-400 mb-8">
+        最后更新日期：2024年1月1日
+      </p>
+
+      <h2>1. 服务说明</h2>
+      <p>
+        AIOS 是一个AI技术探索与服务平台，提供AI项目展示、技术洞察、企业解决方案等服务。使用本平台服务即表示您同意遵守以下条款。
+      </p>
+
+      <h2>2. 用户责任</h2>
+      <p>使用本平台服务时，您同意：</p>
+      <ul>
+        <li>遵守中华人民共和国相关法律法规</li>
+        <li>不利用本平台从事任何违法或不当活动</li>
+        <li>不侵犯他人的知识产权或其他合法权益</li>
+        <li>不尝试破坏或干扰本平台的正常运行</li>
+        <li>提供真实、准确的信息</li>
+      </ul>
+
+      <h2>3. 知识产权</h2>
+      <p>
+        本平台上的所有内容，包括但不限于文字、图片、代码、视频、商标等，均受知识产权法律保护。未经授权，您不得复制、修改、传播或用于商业目的。
+      </p>
+
+      <h2>4. 服务变更与终止</h2>
+      <p>
+        我们保留随时修改、暂停或终止服务的权利，恕不另行通知。对于服务的变更、暂停或终止，我们不承担任何责任。
+      </p>
+
+      <h2>5. 免责声明</h2>
+      <p>
+        本平台提供的内容仅供参考，不构成任何形式的建议或保证。我们不对以下情况承担责任：
+      </p>
+      <ul>
+        <li>因使用本平台内容而导致的任何损失</li>
+        <li>第三方链接网站的内容或服务</li>
+        <li>因不可抗力导致的服务中断</li>
+        <li>用户因违反本条款而产生的任何后果</li>
+      </ul>
+
+      <h2>6. 隐私保护</h2>
+      <p>
+        我们重视用户隐私保护。关于我们如何收集、使用和保护您的个人信息，请参阅我们的< a href="/privacy">隐私政策</a>。
+      </p>
+
+      <h2>7. 条款修改</h2>
+      <p>
+        我们有权随时修改本服务条款。修改后的条款将在本页面公布，您继续使用本平台服务即表示接受修改后的条款。
+      </p>
+
+      <h2>8. 争议解决</h2>
+      <p>
+        因使用本平台服务而产生的任何争议，双方应友好协商解决。协商不成的，可向我们所在地有管辖权的人民法院提起诉讼。
+      </p>
+
+      <h2>9. 联系我们</h2>
+      <p>
+        如您对本服务条款有任何疑问，请通过以下方式联系我们：
+      </p>
+      <ul>
+        <li>邮箱：contact@aios.pub</li>
+        <li>微信公众号：架构师部落</li>
+      </ul>
+    </div>
+  </section>
+</Layout>

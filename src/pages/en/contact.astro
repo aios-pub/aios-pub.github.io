@@ -1,0 +1,171 @@
+---
+import Layout from '~/layouts/PageLayoutEn.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import wechatOfficialAccountImage from '~/assets/images/we_chat_official_account.jpg';
+import wechatImage from '~/assets/images/wechat.jpg';
+import discordImage from '~/assets/images/discord.jpg';
+
+const metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with the AIOS team for AI consulting and solutions',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Contact Us"
+    title="Get in Touch"
+    subtitle="Have questions about our AI services? Want to discuss your project requirements? Our team is ready to help you succeed with AI."
+    image={null}
+  />
+
+  <!-- Features2 Widget: Service Categories -->
+
+  <Features2
+    title="Consultation Services"
+    subtitle="Choose the service type based on your needs"
+    columns={2}
+    items={[
+      {
+        title: 'Business Inquiry',
+        description: 'Learn about AIOS service plans, get quotes, partnership opportunities. Our dedicated account managers will connect with you.',
+        icon: 'tabler:briefcase',
+      },
+      {
+        title: 'Technical Consultation',
+        description: 'AI solution design, system architecture discussions, technology selection. Our technical experts are here to help.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Partnership',
+        description: 'Technology partners, industry solution collaborations, channel partnerships. Let\'s expand the AI services market together.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Media Contact',
+        description: 'Media interviews, news coverage, speaking invitations. Please contact our PR team.',
+        icon: 'tabler:news',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget: Contact Info -->
+
+  <Features2
+    title="Contact Information"
+    subtitle="Multiple ways to reach us"
+    columns={4}
+    items={[
+      {
+        title: 'Email',
+        description: 'contact@aios.pub',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Business Hotline',
+        description: '400-xxx-xxxx',
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Developer Community',
+        description: 'Join AI developer community',
+        icon: 'tabler:brand-github',
+      },
+      {
+        title: 'Working Hours',
+        description: 'Mon-Fri 9:00-18:00',
+        icon: 'tabler:clock',
+      },
+    ]}
+  />
+
+  <!-- Contact QR Codes -->
+  <section class="mx-auto mt-16 max-w-5xl px-4 sm:mt-24 sm:px-6">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">
+        Connect With Us
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
+        Scan QR codes to add friends or join our community
+      </p>
+      <div class="mx-auto mt-8 grid gap-8 sm:grid-cols-3 max-w-4xl">
+        <div class="flex flex-col items-center">
+          <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+            WeChat Official Account
+          </h3>
+          <img
+            src={wechatOfficialAccountImage.src}
+            alt="WeChat Official Account"
+            class="h-56 w-56 rounded-lg object-cover shadow-lg"
+          />
+          <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">
+            架构师部落<br/>In-depth technical articles & architecture insights
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+            WeChat
+          </h3>
+          <img
+            src={wechatImage.src}
+            alt="WeChat"
+            class="h-56 w-56 rounded-lg object-cover shadow-lg"
+          />
+          <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">
+            Add Friend<br/>One-on-one consultation
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+            Discord
+          </h3>
+          <img
+            src={discordImage.src}
+            alt="Discord"
+            class="h-56 w-56 rounded-lg object-cover shadow-lg"
+          />
+          <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">
+            Join Community<br/>Global developer discussions
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Explore More About Us"
+    subtitle="Discover more resources from AIOS"
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Our Services',
+        href: '/en/services',
+        icon: 'tabler:info-circle',
+      },
+      {
+        variant: 'secondary',
+        text: 'Pricing',
+        href: '/en/pricing',
+        icon: 'tabler:credit-card',
+      },
+      {
+        variant: 'secondary',
+        text: 'About Us',
+        href: '/en/about',
+        icon: 'tabler:users',
+      },
+      {
+        variant: 'primary',
+        text: 'Projects',
+        href: '/en/projects',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+</Layout>

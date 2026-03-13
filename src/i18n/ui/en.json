@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "home": "Home",
+    "explore": "Explore",
+    "projects": "Projects",
+    "skills": "Insights",
+    "vibecoding": "VibeCoding",
+    "reviews": "Reviews",
+    "solutions": "Solutions",
+    "services": "Services",
+    "about": "About",
+    "blog": "Blog",
+    "pricing": "Pricing",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "AIOS - Explore the Infinite Possibilities of AI",
+    "subtitle": "Your AI exploration partner - bringing together cutting-edge projects, technical insights, innovative methodologies, and in-depth reviews. Full-stack AI solutions."
+  },
+  "brand": {
+    "tagline": "Explore the Infinite Possibilities of AI",
+    "description": "Not just a content platform, but an AI ecosystem engine"
+  },
+  "features": {
+    "title": "AI Ecosystem",
+    "subtitle": "One-stop AI exploration and services"
+  },
+  "cta": {
+    "title": "Your AI Journey Starts Here",
+    "subtitle": "Whether you're an AI explorer or enterprise decision-maker, AIOS is your trusted partner",
+    "primary": "Explore AI World",
+    "secondary": "Get Enterprise Solutions"
+  },
+  "footer": {
+    "explore": "Explore",
+    "solutions": "Solutions",
+    "ecosystem": "Tech Ecosystem",
+    "about": "About",
+    "footNote": "Made by <a class=\"text-blue-600 underline dark:text-muted\" href=\"https://github.com/lijingrs\">Li Jing</a> · All rights reserved."
+  },
+  "pages": {
+    "projects": {
+      "title": "Cutting-edge Projects",
+      "description": "Curated AI projects exploring the infinite boundaries of AI technology"
+    },
+    "skills": {
+      "title": "Technical Insights",
+      "description": "Deep analysis of core AI technologies and development mastery"
+    },
+    "vibecoding": {
+      "title": "VibeCoding",
+      "description": "Innovative programming methodology - write code with intuition and creativity"
+    },
+    "reviews": {
+      "title": "In-depth Reviews",
+      "description": "Professional and objective AI tools and model reviews"
+    }
+  }
+}

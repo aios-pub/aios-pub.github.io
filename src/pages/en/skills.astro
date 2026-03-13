@@ -1,0 +1,194 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '~/layouts/PageLayoutEn.astro';
+
+const metadata = {
+  title: 'Technical Insights',
+  description: 'Deep analysis of core AI technologies and development mastery',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Technical Insights"
+    image={{
+      src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Technical Skills',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">Technical Insights</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Deep analysis of core AI technologies, from Prompt engineering to model fine-tuning, from data processing to system deployment. We provide systematic skill building to help developers grow quickly.
+    </Fragment>
+  </Hero>
+
+  <!-- Features2 Widget: Core Skills -->
+
+  <Features2
+    title="Core Skill Areas"
+    tagline="Skill System"
+    columns={3}
+    items={[
+      {
+        title: 'Prompt Engineering',
+        description: 'Master prompt design techniques to improve AI model output quality and accuracy',
+        icon: 'tabler:message-language',
+      },
+      {
+        title: 'Model Fine-tuning',
+        description: 'Learn how to customize train large language models for specific task requirements',
+        icon: 'tabler:adjustments',
+      },
+      {
+        title: 'RAG Technology',
+        description: 'Build retrieval-augmented generation systems combining knowledge bases to improve AI answer accuracy',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Agent Development',
+        description: 'Learn agent architecture design and development to build autonomous AI systems',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Data Engineering',
+        description: 'Master core skills in data processing, cleaning, annotation, and pipeline construction',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'System Deployment',
+        description: 'Learn best practices for AI system deployment, monitoring, and operations',
+        icon: 'tabler:cloud-upload',
+      },
+    ]}
+  />
+
+  <!-- Content Widget: Prompt Engineering -->
+
+  <Content
+    id="prompt-engineering"
+    tagline="Skill Details"
+    title="Prompt Engineering"
+    image={{
+      src: 'https://images.unsplash.com/photo-1676299081847-c3c9b2c5d7f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Prompt Engineering',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold mb-3">Core Skills</h3>
+      <ul class="space-y-2">
+        <li><strong>Prompt Design:</strong> Learn how to write clear, effective prompts to guide AI models to produce high-quality output</li>
+        <li><strong>Few-shot Learning:</strong> Teaching through examples for models to quickly understand task requirements and output format</li>
+        <li><strong>Chain-of-Thought:</strong> Guide models to show reasoning process, improving complex problem-solving ability</li>
+        <li><strong>Prompt Optimization:</strong> Iteratively optimize prompts to continuously improve output quality</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget: Model Fine-tuning -->
+
+  <Content
+    id="model-fine-tuning"
+    isReversed
+    tagline="Skill Details"
+    title="Model Fine-tuning"
+    image={{
+      src: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Model Fine-tuning',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold mb-3">Core Skills</h3>
+      <ul class="space-y-2">
+        <li><strong>Data Preparation:</strong> Learn how to prepare high-quality training data to ensure fine-tuning effectiveness</li>
+        <li><strong>Fine-tuning Strategies:</strong> Understand pros and cons of different fine-tuning methods like full fine-tuning and LoRA</li>
+        <li><strong>Hyperparameter Tuning:</strong> Master tuning techniques for learning rate, batch size, and other hyperparameters</li>
+        <li><strong>Effect Evaluation:</strong> Learn how to evaluate fine-tuning results to ensure model performance improvement</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Steps2 Widget: Learning Path -->
+
+  <Steps2
+    title="Learning Path"
+    subtitle="Systematic learning from beginner to expert"
+    items={[
+      {
+        title: 'Fundamentals',
+        description: 'Understand basic concepts of AI and large language models, master Python programming basics',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Prompt Engineering',
+        description: 'Deep dive into prompt design techniques, master efficient communication with AI models',
+        icon: 'tabler:message-language',
+      },
+      {
+        title: 'Application Development',
+        description: 'Learn agent development and system integration to build practical AI applications',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Advanced Optimization',
+        description: 'Master model fine-tuning and performance optimization techniques to improve AI system effectiveness',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget: Learning Resources -->
+
+  <Features2
+    title="Learning Resources"
+    tagline="Get Help"
+    columns={3}
+    items={[
+      {
+        title: 'Technical Documentation',
+        description: 'Detailed technical docs and tutorials to help you get started quickly',
+        icon: 'tabler:book',
+      },
+      {
+        title: 'Developer Community',
+        description: 'Join the AI developer community to exchange tech with enthusiasts',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Training Services',
+        description: 'Professional training courses for systematic AI development skill improvement',
+        icon: 'tabler:presentation',
+        link: '/en/contact',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Need Skills Training Services?"
+    subtitle="We provide professional AI skills training to help teams quickly master AI development capabilities"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/en/contact',
+        icon: 'tabler:mail',
+      },
+      {
+        variant: 'secondary',
+        text: 'Learn Services',
+        href: '/en/services',
+        icon: 'tabler:info-circle',
+      },
+    ]}
+  />
+</Layout>

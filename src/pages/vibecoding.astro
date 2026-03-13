@@ -1,0 +1,202 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'VibeCoding',
+  description: '探索VibeCoding编程方法论，用直觉和创造力编写代码',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="VibeCoding"
+    image={{
+      src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'VibeCoding',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">VibeCoding</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      探索VibeCoding编程方法论——用直觉和创造力编写代码。在这个AI时代，编程不再只是技术活，更是一种艺术表达。
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget: 什么是VibeCoding -->
+
+  <Content
+    id="what-is-vibecoding"
+    tagline="方法论"
+    title="什么是VibeCoding？"
+    image={{
+      src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'VibeCoding Methodology',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="text-lg mb-4">
+        VibeCoding是一种以直觉和创造力为核心的编程方法论。它强调：
+      </p>
+      <ul class="space-y-2">
+        <li><strong>直觉驱动：</strong>相信自己的直觉，让代码自然流淌</li>
+        <li><strong>创造力优先：</strong>将编程视为一种创造性活动，追求优雅和美感</li>
+        <li><strong>AI协作：</strong>与AI工具协同工作，放大创造力而非替代思考</li>
+        <li><strong>持续迭代：</strong>快速原型，持续改进，追求完美</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Features2 Widget: 核心理念 -->
+
+  <Features2
+    title="核心理念"
+    tagline="VibeCoding"
+    columns={2}
+    items={[
+      {
+        title: '心流状态',
+        description: '进入心流状态，让代码成为思维的延伸，享受编程的乐趣',
+        icon: 'tabler:brain',
+      },
+      {
+        title: '优雅代码',
+        description: '追求代码的优雅和简洁，让每一行代码都充满美感',
+        icon: 'tabler:feather',
+      },
+      {
+        title: 'AI增强',
+        description: '善用AI工具，让AI成为你的编程伙伴而非替代品',
+        icon: 'tabler:robot',
+      },
+      {
+        title: '快速迭代',
+        description: '快速构建原型，持续改进优化，拥抱变化',
+        icon: 'tabler:refresh',
+      },
+    ]}
+  />
+
+  <!-- Content Widget: 实践方法 -->
+
+  <Content
+    id="practice-methods"
+    isReversed
+    tagline="实践"
+    title="如何实践VibeCoding？"
+    image={{
+      src: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'VibeCoding Practice',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold mb-3">实践步骤</h3>
+      <ul class="space-y-2">
+        <li><strong>清空思维：</strong>开始编码前，清空杂念，专注于当前任务</li>
+        <li><strong>快速原型：</strong>先用最简单的方式实现功能，不要过度设计</li>
+        <li><strong>AI辅助：</strong>使用AI工具加速开发，但保持对代码的理解和控制</li>
+        <li><strong>持续重构：</strong>在功能稳定后，逐步优化代码结构和质量</li>
+        <li><strong>分享交流：</strong>与他人分享代码，接受反馈，持续改进</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Steps2 Widget: VibeCoding流程 -->
+
+  <Steps2
+    title="VibeCoding工作流"
+    subtitle="从想法到实现的高效流程"
+    items={[
+      {
+        title: '灵感捕捉',
+        description: '捕捉灵感和想法，用简洁的语言描述你想要构建的内容',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'AI对话',
+        description: '与AI工具进行对话，探索实现方案，快速生成初始代码',
+        icon: 'tabler:message-chatbot',
+      },
+      {
+        title: '直觉编码',
+        description: '基于AI生成的代码，用直觉进行调整和优化，注入个人风格',
+        icon: 'tabler:code',
+      },
+      {
+        title: '测试迭代',
+        description: '快速测试，发现问题，持续改进，直到满意为止',
+        icon: 'tabler:test-pipe',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget: 工具推荐 -->
+
+  <Features2
+    title="推荐工具"
+    tagline="AI编程工具"
+    columns={3}
+    items={[
+      {
+        title: 'Claude',
+        description: '强大的AI助手，擅长代码生成和技术对话',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'GitHub Copilot',
+        description: '智能代码补全，提升编码效率',
+        icon: 'tabler:brand-github',
+      },
+      {
+        title: 'Cursor',
+        description: 'AI驱动的代码编辑器，原生支持AI协作',
+        icon: 'tabler:cursor-text',
+      },
+      {
+        title: 'VS Code',
+        description: '强大的代码编辑器，丰富的AI插件生态',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'ChatGPT',
+        description: '多功能AI助手，适合技术问答和学习',
+        icon: 'tabler:message',
+      },
+      {
+        title: '更多工具',
+        description: '持续探索和评测新的AI编程工具',
+        icon: 'tabler:tools',
+        link: '/reviews',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="开始你的VibeCoding之旅"
+    subtitle="释放创造力，用直觉编写优雅代码，与AI协同创造"
+    actions={[
+      {
+        variant: 'primary',
+        text: '探索项目',
+        href: '/projects',
+        icon: 'tabler:folder',
+      },
+      {
+        variant: 'secondary',
+        text: '学习技能',
+        href: '/skills',
+        icon: 'tabler:star',
+      },
+    ]}
+  />
+</Layout>

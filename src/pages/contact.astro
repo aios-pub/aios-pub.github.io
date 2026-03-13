@@ -1,10 +1,11 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import wechatOfficialAccountImage from '~/assets/images/we_chat_official_account.jpg';
 import wechatImage from '~/assets/images/wechat.jpg';
+import discordImage from '~/assets/images/discord.jpg';
 
 const metadata = {
   title: '联系我们',
@@ -16,37 +17,6 @@ const metadata = {
   <!-- HeroText Widget ******************* -->
 
   <HeroText tagline="联系我们" title="开启AI转型之旅" subtitle="AIOS专业团队随时准备为您提供AI咨询服务" />
-
-  <ContactUs
-    id="form"
-    title="给我们留言"
-    subtitle="请填写以下表单，我们会在24小时内回复您。您也可以通过下方的联系方式直接与我们取得联系。"
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: '姓名',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: '邮箱',
-      },
-      {
-        type: 'text',
-        name: 'company',
-        label: '公司名称',
-      },
-    ]}
-    textarea={{
-      label: '留言内容',
-    }}
-    disclaimer={{
-      label:
-        '提交此表单即表示您同意我们收集并处理您的个人信息，仅用于与您沟通相关服务。',
-    }}
-    description="我们的支持团队通常会在24小时内回复。"
-  />
 
   <!-- Features2 Widget: 服务分类 -->
 
@@ -62,7 +32,7 @@ const metadata = {
       },
       {
         title: '技术咨询',
-        description: 'MoFA框架技术问题、AI解决方案设计咨询、系统架构讨论等技术相关咨询，我们的技术专家将为您解答。',
+        description: 'AI解决方案设计咨询、系统架构讨论、技术选型等技术相关咨询，我们的技术专家将为您解答。',
         icon: 'tabler:code',
       },
       {
@@ -87,7 +57,7 @@ const metadata = {
     items={[
       {
         title: '电子邮箱',
-        description: 'contact@aios-rs.com',
+        description: 'contact@aios.pub',
         icon: 'tabler:mail',
       },
       {
@@ -96,8 +66,8 @@ const metadata = {
         icon: 'tabler:phone',
       },
       {
-        title: '技术社区',
-        description: 'github.com/mofa-org/mofa',
+        title: '开发者社区',
+        description: '加入AI开发者社区',
         icon: 'tabler:brand-github',
       },
       {
@@ -108,21 +78,55 @@ const metadata = {
     ]}
   />
 
-  <!-- 微信二维码 -->
+  <!-- 联系方式二维码 -->
   <section class="mx-auto mt-16 max-w-5xl px-4 sm:mt-24 sm:px-6">
     <div class="text-center">
       <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">
-        微信联系我们
+        联系我们
       </h2>
       <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
-        扫描下方二维码，关注AIOS官方微信，获取最新资讯和服务
+        扫描二维码添加好友或加入社区
       </p>
-      <div class="mx-auto mt-8 flex justify-center">
-        <img
-          src={wechatImage.src}
-          alt="AIOS微信二维码"
-          class="h-80 w-80 rounded-lg object-cover shadow-lg"
-        />
+      <div class="mx-auto mt-8 grid gap-8 sm:grid-cols-3 max-w-4xl">
+        <div class="flex flex-col items-center">
+          <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+            微信公众号
+          </h3>
+          <img
+            src={wechatOfficialAccountImage.src}
+            alt="微信公众号：架构师部落"
+            class="h-56 w-56 rounded-lg object-cover shadow-lg"
+          />
+          <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">
+            架构师部落<br/>深度技术文章、架构设计分享
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+            微信号
+          </h3>
+          <img
+            src={wechatImage.src}
+            alt="微信号"
+            class="h-56 w-56 rounded-lg object-cover shadow-lg"
+          />
+          <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">
+            添加好友<br/>一对一咨询服务
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+            Discord
+          </h3>
+          <img
+            src={discordImage.src}
+            alt="Discord"
+            class="h-56 w-56 rounded-lg object-cover shadow-lg"
+          />
+          <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">
+            加入社区<br/>全球开发者交流
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -153,10 +157,9 @@ const metadata = {
       },
       {
         variant: 'primary',
-        text: 'MoFA开源项目',
-        href: 'https://github.com/mofa-org/mofa',
-        icon: 'tabler:brand-github',
-        target: '_blank',
+        text: '探索项目',
+        href: '/projects',
+        icon: 'tabler:rocket',
       },
     ]}
   />

@@ -1,0 +1,231 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayoutEn.astro';
+
+const metadata = {
+  title: 'Enterprise AI Solutions',
+  description: 'AIOS provides comprehensive enterprise AI solutions: AI strategy consulting, agent system development, data engineering, model optimization, and operations support',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Enterprise AI Solutions"
+    title="Empower Your Business, Lead the Future"
+    subtitle="From strategic planning to system deployment, AIOS provides end-to-end AI solutions for enterprises. Full-stack technical capabilities — rapid delivery, reliable performance, continuous evolution."
+    actions={[{ variant: 'primary', target: '_self', text: 'Schedule Consultation', href: '/en/contact', icon: 'tabler:headset' }]}
+    image={null}
+  />
+
+  <!-- Features Widget ************** -->
+
+  <Features
+    tagline="Full-Stack AI Services"
+    title="From Vision to Reality, End-to-End Partnership"
+    items={[
+      {
+        title: 'AI Strategy Consulting',
+        description: 'Deep assessment of AI maturity, identify high-value scenarios, develop actionable AI transformation roadmap',
+        icon: 'tabler:brain',
+        link: '/en/contact',
+      },
+      {
+        title: 'Solution Design',
+        description: 'Design scalable AI architecture, precise model selection, complete data planning and risk assessment',
+        icon: 'tabler:schema',
+        link: '/en/contact',
+      },
+      {
+        title: 'Agent System Development',
+        description: 'Rapidly build enterprise-grade AI agents with modular design, supporting multi-model, multi-cloud deployment',
+        icon: 'tabler:robot',
+        link: '/en/contact',
+      },
+      {
+        title: 'Data Engineering',
+        description: 'From data collection to quality management, build high-quality data pipelines to power AI',
+        icon: 'tabler:database',
+        link: '/en/contact',
+      },
+      {
+        title: 'Model Optimization',
+        description: 'Prompt engineering, model fine-tuning, RAG construction, performance tuning — maximize AI value',
+        icon: 'tabler:adjustments',
+        link: '/en/contact',
+      },
+      {
+        title: 'Operations Support',
+        description: '7x24 monitoring, rapid response, continuous iteration — ensure stable and efficient AI operations',
+        icon: 'tabler:headset',
+        link: '/en/contact',
+      },
+    ]}
+  />
+
+  <!-- Content Widget: AI Strategy Consulting -->
+
+  <Content
+    id="ai-consulting"
+    tagline="Strategy First"
+    title="AI Strategy Consulting"
+    image={{
+      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'AI Strategy Consulting',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="text-lg font-medium mb-4">Find the optimal entry point for AI value</p>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong>AI Maturity Assessment:</strong> Comprehensive diagnosis of current AI status, identify gaps and opportunities</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong>Scenario Value Analysis:</strong> Precisely locate high-ROI AI application scenarios</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong>Transformation Roadmap:</strong> Develop phased, actionable AI transformation path</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong>ROI Prediction:</strong> Quantify investment returns to support decision-making</span>
+        </li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget: Agent System Development -->
+
+  <Content
+    id="agent-development"
+    isReversed
+    tagline="Core Capability"
+    title="Agent System Development"
+    image={{
+      src: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Agent System Development',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="text-lg font-medium mb-4">Full-stack capabilities to rapidly build enterprise-grade AI agents</p>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>Modular Architecture:</strong> Build complex AI systems like building blocks</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>Multi-Model Support:</strong> Seamlessly switch between OpenAI, Claude, Qwen and more</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>Flexible Deployment:</strong> Cloud SaaS, on-premise, or hybrid cloud options</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>Seamless Integration:</strong> Quick connection with existing enterprise systems</span>
+        </li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Features2 Widget: Industry Solutions -->
+
+  <Features2
+    title="Industry Solutions"
+    tagline="Industry Expertise"
+    subtitle="Tailored AI solutions for every industry"
+    columns={3}
+    items={[
+      {
+        title: 'Fintech',
+        description: 'Intelligent advisory, risk assessment, smart customer service, fraud detection',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Smart Manufacturing',
+        description: 'Predictive maintenance, quality inspection, supply chain optimization, smart scheduling',
+        icon: 'tabler:building-factory',
+      },
+      {
+        title: 'Retail & E-commerce',
+        description: 'Smart recommendations, demand forecasting, intelligent customer service, inventory optimization',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'Healthcare',
+        description: 'Diagnostic assistance, intelligent consultation, drug development, health management',
+        icon: 'tabler:heartbeat',
+      },
+      {
+        title: 'Education',
+        description: 'Intelligent tutoring, personalized learning, auto-grading, smart Q&A',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'More Industries',
+        description: 'Contact us for customized solutions in your industry',
+        icon: 'tabler:dots',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget: Service Process -->
+
+  <Steps
+    title="Service Process"
+    tagline="Professional & Efficient"
+    items={[
+      {
+        title: 'Requirement Discovery',
+        description: 'Deep understanding of business pain points and AI goals',
+      },
+      {
+        title: 'Solution Design',
+        description: 'Design targeted AI solutions and implementation plans',
+      },
+      {
+        title: 'Rapid Delivery',
+        description: 'Agile development, rapid iteration, on-time quality delivery',
+      },
+      {
+        title: 'Training & Enablement',
+        description: 'Comprehensive training to ensure team proficiency',
+      },
+      {
+        title: 'Continuous Evolution',
+        description: 'Operations support, continuous optimization, grow together',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Schedule Consultation',
+        href: '/en/contact',
+        icon: 'tabler:headset',
+      },
+      {
+        variant: 'secondary',
+        text: 'View Pricing',
+        href: '/en/pricing',
+        icon: 'tabler:credit-card',
+      },
+    ]}
+    title="Ready to Start Your AI Transformation?"
+    subtitle="The AIOS professional team is ready to craft the perfect AI solution for your business"
+  />
+</Layout>

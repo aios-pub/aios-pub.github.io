@@ -1,0 +1,158 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '~/layouts/PageLayoutEn.astro';
+
+const metadata = {
+  title: 'AI Projects Showcase',
+  description: 'Curated AI projects exploring the infinite boundaries of AI technology',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Cutting-edge Projects"
+    image={{
+      src: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AI Projects',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">AI Projects Showcase</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Curated AI projects covering agents, automation tools, data analysis, and more. Each project undergoes rigorous testing and optimization to ensure high quality and reliability.
+    </Fragment>
+  </Hero>
+
+  <!-- Features2 Widget: Core Projects -->
+
+  <Features2
+    title="Core Projects"
+    tagline="Featured Projects"
+    subtitle="Quality AI projects with full-stack technical capabilities"
+    columns={3}
+    items={[
+      {
+        title: 'Agent Development Framework',
+        description: 'Modular agent development framework supporting rapid construction and deployment of complex AI systems',
+        icon: 'tabler:brand-codesandbox',
+      },
+      {
+        title: 'AI Data Analysis Platform',
+        description: 'Powerful data analysis tool supporting multi-dimensional data visualization and intelligent insights',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Intelligent Conversation System',
+        description: 'Intelligent conversation system based on large language models supporting multi-turn dialogue and context understanding',
+        icon: 'tabler:message-chatbot',
+      },
+      {
+        title: 'Document Intelligence Processing',
+        description: 'Automatic document parsing, classification, and information extraction to improve document processing efficiency',
+        icon: 'tabler:file-text',
+      },
+      {
+        title: 'Code Generation Assistant',
+        description: 'AI-driven code generation tool supporting multiple programming languages and frameworks',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Intelligent Recommendation Engine',
+        description: 'Personalized recommendation system based on user behavior and preferences for precise recommendations',
+        icon: 'tabler:star',
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget: Project Features -->
+
+  <Steps2
+    title="Project Features"
+    subtitle="Every project follows high quality standards"
+    items={[
+      {
+        title: 'Modular Design',
+        description: 'Adopt modular architecture design with reusable, maintainable, and extensible components',
+        icon: 'tabler:blocks',
+      },
+      {
+        title: 'Enterprise Quality',
+        description: 'Rigorous testing and optimization meeting enterprise application stability and security requirements',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Open Collaboration',
+        description: 'Actively participate in open source community, welcome contributions and collaborative development',
+        icon: 'tabler:brand-github',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget: Industry Applications -->
+
+  <Features2
+    title="Industry Applications"
+    tagline="Application Scenarios"
+    columns={3}
+    items={[
+      {
+        title: 'Fintech',
+        description: 'Intelligent risk control, quantitative analysis, robo-advisory and other financial AI solutions',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Smart Manufacturing',
+        description: 'Predictive maintenance, quality inspection, supply chain optimization AI applications',
+        icon: 'tabler:building-factory',
+      },
+      {
+        title: 'Healthcare',
+        description: 'Diagnostic assistance, intelligent consultation, health management AI solutions',
+        icon: 'tabler:heartbeat',
+      },
+      {
+        title: 'Education',
+        description: 'Intelligent tutoring, personalized learning, auto-grading AI applications',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Retail & E-commerce',
+        description: 'Smart recommendations, demand forecasting, intelligent customer service AI solutions',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'More Fields',
+        description: 'Continuously exploring more AI application scenarios, contact us for customization needs',
+        icon: 'tabler:dots',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Have Project Collaboration Needs?"
+    subtitle="Contact us for customized AI project development services"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/en/contact',
+        icon: 'tabler:mail',
+      },
+      {
+        variant: 'secondary',
+        text: 'Learn Services',
+        href: '/en/services',
+        icon: 'tabler:info-circle',
+      },
+    ]}
+  />
+</Layout>

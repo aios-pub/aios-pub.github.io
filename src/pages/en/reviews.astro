@@ -1,0 +1,207 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '~/layouts/PageLayoutEn.astro';
+
+const metadata = {
+  title: 'AI Reviews',
+  description: 'In-depth reviews of various AI tools and models to help you make informed decisions',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="AI Reviews"
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AI Reviews',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">AI Reviews</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      In-depth reviews of various AI tools and models, providing objective and professional analysis and recommendations. Help you find the most suitable AI solutions among many choices.
+    </Fragment>
+  </Hero>
+
+  <!-- Features2 Widget: Review Categories -->
+
+  <Features2
+    title="Review Categories"
+    tagline="Coverage"
+    columns={3}
+    items={[
+      {
+        title: 'Large Language Models',
+        description: 'Performance comparison of mainstream LLMs like GPT-4, Claude, Qwen',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'AI Coding Tools',
+        description: 'In-depth reviews of AI programming assistants like GitHub Copilot, Cursor',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'AI Image Tools',
+        description: 'Comparative analysis of AI image generation tools like Midjourney, DALL-E',
+        icon: 'tabler:photo',
+      },
+      {
+        title: 'AI Audio Tools',
+        description: 'Reviews of speech recognition, speech synthesis, audio processing AI tools',
+        icon: 'tabler:music',
+      },
+      {
+        title: 'AI Video Tools',
+        description: 'Evaluation of video generation and editing AI tool functionality and effects',
+        icon: 'tabler:video',
+      },
+      {
+        title: 'Enterprise AI Platforms',
+        description: 'Reviews of enterprise AI platform performance, security, and usability',
+        icon: 'tabler:building',
+      },
+    ]}
+  />
+
+  <!-- Content Widget: Review Methodology -->
+
+  <Content
+    id="review-methodology"
+    tagline="Methodology"
+    title="Our Review Method"
+    image={{
+      src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Review Methodology',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold mb-3">Review Dimensions</h3>
+      <ul class="space-y-2">
+        <li><strong>Functionality:</strong> Evaluate whether the tool's core features meet requirements</li>
+        <li><strong>Performance:</strong> Test key metrics like response speed, accuracy, stability</li>
+        <li><strong>Usability:</strong> Evaluate user interface, learning curve, documentation quality</li>
+        <li><strong>Value:</strong> Analyze pricing models, evaluate cost-effectiveness</li>
+        <li><strong>Security:</strong> Evaluate data privacy, compliance, and other security factors</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget: Latest Reviews -->
+
+  <Content
+    id="latest-reviews"
+    isReversed
+    tagline="Latest Reviews"
+    title="Popular AI Tools Comparison"
+    image={{
+      src: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'AI Tool Comparison',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold mb-3">Large Language Model Comparison</h3>
+      <div class="space-y-3">
+        <div class="p-3 bg-gray-100 dark:bg-gray-800 rounded">
+          <div class="font-semibold">Claude 3.5 Sonnet</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">Excellent overall performance, strong reasoning, suitable for complex tasks</div>
+        </div>
+        <div class="p-3 bg-gray-100 dark:bg-gray-800 rounded">
+          <div class="font-semibold">GPT-4 Turbo</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">Comprehensive features, mature ecosystem, suitable for general scenarios</div>
+        </div>
+        <div class="p-3 bg-gray-100 dark:bg-gray-800 rounded">
+          <div class="font-semibold">Qwen Max</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">Strong Chinese capabilities, high cost-effectiveness, suitable for domestic users</div>
+        </div>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps2 Widget: Review Process -->
+
+  <Steps2
+    title="Review Process"
+    subtitle="Rigorous reviews ensure objectivity and fairness"
+    items={[
+      {
+        title: 'Requirements Analysis',
+        description: 'Analyze core needs and use cases of target user groups',
+        icon: 'tabler:target',
+      },
+      {
+        title: 'Functional Testing',
+        description: 'Conduct actual functional testing, record detailed test data and results',
+        icon: 'tabler:test-pipe',
+      },
+      {
+        title: 'Comparative Analysis',
+        description: 'Horizontal comparison with similar products, identify strengths and weaknesses',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Report Writing',
+        description: 'Organize review results, write detailed review reports and recommendations',
+        icon: 'tabler:file-text',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget: Review Value -->
+
+  <Features2
+    title="Review Value"
+    tagline="Why Follow Reviews?"
+    columns={2}
+    items={[
+      {
+        title: 'Save Time',
+        description: 'Quickly understand pros and cons of tools through professional reviews, save selection time',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Reduce Risk',
+        description: 'Avoid choosing unsuitable tools, reduce project risk',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Optimize Cost',
+        description: 'Understand cost-effectiveness of tools, make optimal investment decisions',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Stay Updated',
+        description: 'Continuously follow AI tool developments, stay informed about latest trends',
+        icon: 'tabler:refresh',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Need Customized Review Services?"
+    subtitle="We provide AI tool review and selection consulting services for specific needs"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/en/contact',
+        icon: 'tabler:mail',
+      },
+      {
+        variant: 'secondary',
+        text: 'Learn Services',
+        href: '/en/services',
+        icon: 'tabler:info-circle',
+      },
+    ]}
+  />
+</Layout>

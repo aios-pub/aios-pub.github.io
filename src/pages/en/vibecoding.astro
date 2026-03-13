@@ -1,0 +1,202 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '~/layouts/PageLayoutEn.astro';
+
+const metadata = {
+  title: 'VibeCoding',
+  description: 'Explore the VibeCoding methodology - write code with intuition and creativity',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="VibeCoding"
+    image={{
+      src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'VibeCoding',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">VibeCoding</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Explore the VibeCoding programming methodology - write code with intuition and creativity. In this AI era, programming is no longer just technical work, but an artistic expression.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget: What is VibeCoding -->
+
+  <Content
+    id="what-is-vibecoding"
+    tagline="Methodology"
+    title="What is VibeCoding?"
+    image={{
+      src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'VibeCoding Methodology',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="text-lg mb-4">
+        VibeCoding is a programming methodology centered on intuition and creativity. It emphasizes:
+      </p>
+      <ul class="space-y-2">
+        <li><strong>Intuition-Driven:</strong> Trust your intuition, let code flow naturally</li>
+        <li><strong>Creativity First:</strong> View programming as a creative activity, pursuing elegance and beauty</li>
+        <li><strong>AI Collaboration:</strong> Work with AI tools to amplify creativity rather than replace thinking</li>
+        <li><strong>Continuous Iteration:</strong> Rapid prototyping, continuous improvement, pursuing perfection</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Features2 Widget: Core Concepts -->
+
+  <Features2
+    title="Core Concepts"
+    tagline="VibeCoding"
+    columns={2}
+    items={[
+      {
+        title: 'Flow State',
+        description: 'Enter flow state, make code an extension of thought, enjoy the joy of programming',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Elegant Code',
+        description: 'Pursue elegance and simplicity in code, let every line be filled with beauty',
+        icon: 'tabler:feather',
+      },
+      {
+        title: 'AI Augmentation',
+        description: 'Use AI tools wisely, let AI be your programming partner, not replacement',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Rapid Iteration',
+        description: 'Quickly build prototypes, continuously improve and optimize, embrace change',
+        icon: 'tabler:refresh',
+      },
+    ]}
+  />
+
+  <!-- Content Widget: Practice Methods -->
+
+  <Content
+    id="practice-methods"
+    isReversed
+    tagline="Practice"
+    title="How to Practice VibeCoding?"
+    image={{
+      src: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'VibeCoding Practice',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold mb-3">Practice Steps</h3>
+      <ul class="space-y-2">
+        <li><strong>Clear Your Mind:</strong> Before coding, clear distractions and focus on the current task</li>
+        <li><strong>Rapid Prototyping:</strong> First implement functionality in the simplest way, don't over-engineer</li>
+        <li><strong>AI Assistance:</strong> Use AI tools to accelerate development while maintaining understanding and control of code</li>
+        <li><strong>Continuous Refactoring:</strong> After functionality stabilizes, gradually optimize code structure and quality</li>
+        <li><strong>Share & Exchange:</strong> Share code with others, accept feedback, continuously improve</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Steps2 Widget: VibeCoding Workflow -->
+
+  <Steps2
+    title="VibeCoding Workflow"
+    subtitle="Efficient process from idea to implementation"
+    items={[
+      {
+        title: 'Inspiration Capture',
+        description: 'Capture inspiration and ideas, describe what you want to build in concise language',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'AI Dialogue',
+        description: 'Dialogue with AI tools, explore implementation approaches, quickly generate initial code',
+        icon: 'tabler:message-chatbot',
+      },
+      {
+        title: 'Intuitive Coding',
+        description: 'Based on AI-generated code, adjust and optimize with intuition, inject personal style',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Test & Iterate',
+        description: 'Quickly test, find issues, continuously improve until satisfied',
+        icon: 'tabler:test-pipe',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget: Recommended Tools -->
+
+  <Features2
+    title="Recommended Tools"
+    tagline="AI Programming Tools"
+    columns={3}
+    items={[
+      {
+        title: 'Claude',
+        description: 'Powerful AI assistant, excellent at code generation and technical conversations',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'GitHub Copilot',
+        description: 'Intelligent code completion to improve coding efficiency',
+        icon: 'tabler:brand-github',
+      },
+      {
+        title: 'Cursor',
+        description: 'AI-powered code editor with native AI collaboration support',
+        icon: 'tabler:cursor-text',
+      },
+      {
+        title: 'VS Code',
+        description: 'Powerful code editor with rich AI plugin ecosystem',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'ChatGPT',
+        description: 'Multi-functional AI assistant, suitable for technical Q&A and learning',
+        icon: 'tabler:message',
+      },
+      {
+        title: 'More Tools',
+        description: 'Continuously exploring and reviewing new AI programming tools',
+        icon: 'tabler:tools',
+        link: '/en/reviews',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Start Your VibeCoding Journey"
+    subtitle="Unleash creativity, write elegant code with intuition, create with AI collaboration"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Explore Projects',
+        href: '/en/projects',
+        icon: 'tabler:folder',
+      },
+      {
+        variant: 'secondary',
+        text: 'Learn Skills',
+        href: '/en/skills',
+        icon: 'tabler:star',
+      },
+    ]}
+  />
+</Layout>

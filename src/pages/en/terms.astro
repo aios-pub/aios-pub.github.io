@@ -1,0 +1,86 @@
+---
+import Layout from '~/layouts/PageLayoutEn.astro';
+import Hero from '~/components/widgets/Hero.astro';
+
+const metadata = {
+  title: 'Terms of Service - aios.pub',
+  description: 'Terms of Service for AIOS - Please read carefully before using our services',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Terms of Service"
+    title="Terms of Service"
+    subtitle="Please read these terms carefully before using AIOS services"
+    image={null}
+  />
+
+  <section class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="prose prose-slate dark:prose-invert max-w-none">
+      <p class="text-lg text-slate-600 dark:text-slate-400 mb-8">
+        Last Updated: January 1, 2024
+      </p>
+
+      <h2>1. Service Description</h2>
+      <p>
+        AIOS is an AI technology exploration and service platform providing AI project showcases, technical insights, and enterprise solutions. By using our platform, you agree to comply with the following terms.
+      </p>
+
+      <h2>2. User Responsibilities</h2>
+      <p>When using our platform, you agree to:</p>
+      <ul>
+        <li>Comply with all applicable laws and regulations</li>
+        <li>Not engage in any illegal or improper activities</li>
+        <li>Not infringe on intellectual property or other legal rights of others</li>
+        <li>Not attempt to disrupt or interfere with the normal operation of our platform</li>
+        <li>Provide truthful and accurate information</li>
+      </ul>
+
+      <h2>3. Intellectual Property</h2>
+      <p>
+        All content on this platform, including but not limited to text, images, code, videos, and trademarks, is protected by intellectual property laws. You may not copy, modify, distribute, or use for commercial purposes without authorization.
+      </p>
+
+      <h2>4. Service Modifications and Termination</h2>
+      <p>
+        We reserve the right to modify, suspend, or terminate services at any time without prior notice. We are not liable for any service modifications, suspensions, or terminations.
+      </p>
+
+      <h2>5. Disclaimer</h2>
+      <p>
+        The content provided on this platform is for reference only and does not constitute any form of advice or guarantee. We are not responsible for:
+      </p>
+      <ul>
+        <li>Any losses resulting from the use of content on this platform</li>
+        <li>Content or services of third-party linked websites</li>
+        <li>Service interruptions due to force majeure</li>
+        <li>Any consequences resulting from your violation of these terms</li>
+      </ul>
+
+      <h2>6. Privacy Protection</h2>
+      <p>
+        We value user privacy protection. For information on how we collect, use, and protect your personal information, please refer to our <a href="/en/privacy">Privacy Policy</a>.
+      </p>
+
+      <h2>7. Terms Modifications</h2>
+      <p>
+        We reserve the right to modify these terms at any time. Modified terms will be published on this page, and your continued use of the platform constitutes acceptance of the modified terms.
+      </p>
+
+      <h2>8. Dispute Resolution</h2>
+      <p>
+        Any disputes arising from the use of this platform shall be resolved through friendly negotiation. If negotiation fails, disputes may be submitted to the competent court in our jurisdiction.
+      </p>
+
+      <h2>9. Contact Us</h2>
+      <p>
+        If you have any questions about these terms, please contact us through:
+      </p>
+      <ul>
+        <li>Email: contact@aios.pub</li>
+        <li>WeChat Official Account: 架构师部落</li>
+      </ul>
+    </div>
+  </section>
+</Layout>

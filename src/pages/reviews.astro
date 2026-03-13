@@ -1,0 +1,207 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'AI评测',
+  description: '深入评测各类AI工具和模型，助您做出明智选择',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="AI评测"
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AI Reviews',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">AI评测</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      深入评测各类AI工具和模型，提供客观、专业的分析和建议。帮助您在众多选择中找到最适合的AI解决方案。
+    </Fragment>
+  </Hero>
+
+  <!-- Features2 Widget: 评测类别 -->
+
+  <Features2
+    title="评测类别"
+    tagline="覆盖范围"
+    columns={3}
+    items={[
+      {
+        title: '大语言模型',
+        description: 'GPT-4、Claude、Qwen等主流大语言模型的性能对比',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'AI编程工具',
+        description: 'GitHub Copilot、Cursor等AI编程助手的深度评测',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'AI图像工具',
+        description: 'Midjourney、DALL-E等AI图像生成工具的对比分析',
+        icon: 'tabler:photo',
+      },
+      {
+        title: 'AI音频工具',
+        description: '语音识别、语音合成、音频处理AI工具评测',
+        icon: 'tabler:music',
+      },
+      {
+        title: 'AI视频工具',
+        description: '视频生成、视频编辑AI工具的功能和效果评估',
+        icon: 'tabler:video',
+      },
+      {
+        title: '企业AI平台',
+        description: '企业级AI平台的性能、安全性和易用性评测',
+        icon: 'tabler:building',
+      },
+    ]}
+  />
+
+  <!-- Content Widget: 评测方法论 -->
+
+  <Content
+    id="review-methodology"
+    tagline="方法论"
+    title="我们的评测方法"
+    image={{
+      src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Review Methodology',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold mb-3">评测维度</h3>
+      <ul class="space-y-2">
+        <li><strong>功能性：</strong>评估工具的核心功能和特性是否满足需求</li>
+        <li><strong>性能表现：</strong>测试响应速度、准确性、稳定性等关键指标</li>
+        <li><strong>易用性：</strong>评估用户界面、学习曲线、文档质量</li>
+        <li><strong>性价比：</strong>分析定价模式，评估投入产出比</li>
+        <li><strong>安全性：</strong>评估数据隐私、合规性等安全因素</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget: 最新评测 -->
+
+  <Content
+    id="latest-reviews"
+    isReversed
+    tagline="最新评测"
+    title="热门AI工具对比"
+    image={{
+      src: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'AI Tool Comparison',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold mb-3">大语言模型对比</h3>
+      <div class="space-y-3">
+        <div class="p-3 bg-gray-100 dark:bg-gray-800 rounded">
+          <div class="font-semibold">Claude 3.5 Sonnet</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">综合表现优秀，推理能力强，适合复杂任务</div>
+        </div>
+        <div class="p-3 bg-gray-100 dark:bg-gray-800 rounded">
+          <div class="font-semibold">GPT-4 Turbo</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">功能全面，生态成熟，适合通用场景</div>
+        </div>
+        <div class="p-3 bg-gray-100 dark:bg-gray-800 rounded">
+          <div class="font-semibold">Qwen Max</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">中文能力强，性价比高，适合国内用户</div>
+        </div>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps2 Widget: 评测流程 -->
+
+  <Steps2
+    title="评测流程"
+    subtitle="严谨的评测确保客观公正"
+    items={[
+      {
+        title: '需求分析',
+        description: '分析目标用户群体的核心需求和使用场景',
+        icon: 'tabler:target',
+      },
+      {
+        title: '功能测试',
+        description: '进行实际功能测试，记录详细测试数据和结果',
+        icon: 'tabler:test-pipe',
+      },
+      {
+        title: '对比分析',
+        description: '与同类产品进行横向对比，找出优缺点',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: '撰写报告',
+        description: '整理评测结果，撰写详细评测报告和建议',
+        icon: 'tabler:file-text',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget: 评测价值 -->
+
+  <Features2
+    title="评测价值"
+    tagline="为什么关注评测？"
+    columns={2}
+    items={[
+      {
+        title: '节省时间',
+        description: '通过专业评测快速了解各工具优劣，节省选型时间',
+        icon: 'tabler:clock',
+      },
+      {
+        title: '降低风险',
+        description: '避免选择不合适的工具，降低项目风险',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: '优化成本',
+        description: '了解各工具的性价比，做出最优投资决策',
+        icon: 'tabler:coin',
+      },
+      {
+        title: '保持更新',
+        description: '持续关注AI工具发展，及时了解最新动态',
+        icon: 'tabler:refresh',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="需要定制化评测服务？"
+    subtitle="我们提供针对特定需求的AI工具评测和选型咨询服务"
+    actions={[
+      {
+        variant: 'primary',
+        text: '联系我们',
+        href: '/contact',
+        icon: 'tabler:mail',
+      },
+      {
+        variant: 'secondary',
+        text: '了解服务',
+        href: '/services',
+        icon: 'tabler:info-circle',
+      },
+    ]}
+  />
+</Layout>

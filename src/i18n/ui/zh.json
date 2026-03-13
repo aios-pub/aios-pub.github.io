@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "home": "首页",
+    "explore": "探索",
+    "projects": "前沿项目",
+    "skills": "技术洞察",
+    "vibecoding": "VibeCoding",
+    "reviews": "深度评测",
+    "solutions": "解决方案",
+    "services": "服务",
+    "about": "关于",
+    "blog": "博客",
+    "pricing": "定价",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "title": "AIOS - 探索AI无限可能",
+    "subtitle": "您的AI探索伙伴——汇聚前沿项目、核心技术洞察、创新编程方法论与深度评测。提供全栈AI解决方案。"
+  },
+  "brand": {
+    "tagline": "探索AI的无限可能",
+    "description": "不只是内容平台，更是AI生态引擎"
+  },
+  "features": {
+    "title": "AI生态全景",
+    "subtitle": "一站式AI探索与服务"
+  },
+  "cta": {
+    "title": "AI时代，从这里启航",
+    "subtitle": "无论您是AI探索者还是企业决策者，AIOS都是您值得信赖的伙伴",
+    "primary": "探索AI世界",
+    "secondary": "获取企业方案"
+  },
+  "footer": {
+    "explore": "探索",
+    "solutions": "解决方案",
+    "ecosystem": "技术生态",
+    "about": "关于",
+    "footNote": "由 <a class=\"text-blue-600 underline dark:text-muted\" href=\"https://github.com/lijingrs\">李靖</a> 制作 · 保留所有权利。"
+  },
+  "pages": {
+    "projects": {
+      "title": "前沿项目",
+      "description": "汇聚精心打造的AI项目，探索AI技术的无限边界"
+    },
+    "skills": {
+      "title": "技术洞察",
+      "description": "深度解析AI核心技术，掌握AI开发精髓"
+    },
+    "vibecoding": {
+      "title": "VibeCoding",
+      "description": "创新编程方法论——用直觉和创造力编写代码"
+    },
+    "reviews": {
+      "title": "深度评测",
+      "description": "专业客观的AI工具与模型评测"
+    }
+  }
+}

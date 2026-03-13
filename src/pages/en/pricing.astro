@@ -1,0 +1,152 @@
+---
+import Layout from '~/layouts/PageLayoutEn.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pricing',
+  description: 'AIOS AI services pricing plans - flexible options for businesses of all sizes',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Pricing Plans"
+    title="Flexible AI Service Pricing"
+    subtitle="Choose the right service plan for your business needs. From startups to enterprises, we have solutions that fit your budget and requirements."
+    image={null}
+  />
+
+  <!-- Pricing Widget *************** -->
+
+  <Pricing
+    title="Service Plans"
+    subtitle="Transparent pricing, no hidden fees"
+    items={[
+      {
+        title: 'Starter',
+        subtitle: 'For small projects',
+        price: 29999,
+        period: 'per project',
+        items: [
+          { description: 'Basic AI Strategy Consulting' },
+          { description: 'Single Agent Development' },
+          { description: '3 Months Support' },
+          { description: 'Email Support' },
+          { description: 'Basic Documentation' },
+        ],
+        callToAction: {
+          target: '_self',
+          text: 'Get Started',
+          href: '/en/contact',
+        },
+      },
+      {
+        title: 'Professional',
+        subtitle: 'For growing businesses',
+        price: 99999,
+        period: 'per project',
+        items: [
+          { description: 'Comprehensive AI Strategy' },
+          { description: 'Multi-Agent System Development' },
+          { description: '6 Months Support' },
+          { description: 'Priority Support' },
+          { description: 'Custom Integration' },
+          { description: 'Training Included' },
+        ],
+        callToAction: {
+          target: '_self',
+          text: 'Get Started',
+          href: '/en/contact',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'Popular',
+      },
+      {
+        title: 'Enterprise',
+        subtitle: 'For large organizations',
+        price: 'Custom',
+        period: 'contact us',
+        items: [
+          { description: 'Full AI Transformation Consulting' },
+          { description: 'Enterprise Agent Platform' },
+          { description: '12 Months Support' },
+          { description: '24/7 Dedicated Support' },
+          { description: 'On-premise Deployment' },
+          { description: 'Custom SLA' },
+          { description: 'Dedicated Team' },
+        ],
+        callToAction: {
+          target: '_self',
+          text: 'Contact Sales',
+          href: '/en/contact',
+        },
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget: What's Included -->
+
+  <Features2
+    title="What's Included"
+    tagline="All Plans Include"
+    columns={3}
+    items={[
+      {
+        title: 'Full-Stack Framework',
+        description: 'Access to our comprehensive AI development framework',
+        icon: 'tabler:brand-codesandbox',
+      },
+      {
+        title: 'Documentation',
+        description: 'Comprehensive technical documentation and guides',
+        icon: 'tabler:book',
+      },
+      {
+        title: 'Community Access',
+        description: 'Join our developer community for support and networking',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Regular Updates',
+        description: 'Stay current with the latest AI capabilities and features',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Security Review',
+        description: 'Security assessment and best practices guidance',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Performance Monitoring',
+        description: 'Tools and dashboards for system performance tracking',
+        icon: 'tabler:chart-line',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Need a Custom Plan?"
+    subtitle="Contact us to discuss your specific requirements and get a tailored solution"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Sales',
+        href: '/en/contact',
+        icon: 'tabler:mail',
+      },
+      {
+        variant: 'secondary',
+        text: 'View Services',
+        href: '/en/services',
+        icon: 'tabler:info-circle',
+      },
+    ]}
+  />
+</Layout>

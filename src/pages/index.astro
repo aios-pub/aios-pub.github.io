@@ -8,13 +8,10 @@ import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
-// Video from public folder
-const heroVideoUrl = "/assets/videos/ac4e42915f3905919be7879894e9930d.mp4";
-
 const metadata = {
-  title: 'AIOS - 面向企业的AI解决方案平台',
+  title: 'aios.pub - 探索AI无限可能',
   ignoreTitleTemplate: true,
-  description: 'AIOS是专注于为企业提供全方位AI解决方案的平台。基于MoFA企业级智能体框架，提供从AI战略咨询、解决方案设计、到系统部署和运维的全流程服务。',
+  description: 'AIOS是您的AI探索伙伴——汇聚前沿AI项目、核心技术洞察、创新编程方法论与深度评测。提供从战略咨询到系统部署的全栈AI解决方案。',
 };
 ---
 
@@ -24,86 +21,112 @@ const metadata = {
   <Hero actions={[
       {
         variant: 'primary',
-        text: '咨询AI方案',
-        href: '/contact',
+        text: '开启AI之旅',
+        href: '/projects',
         target: '_self',
-        icon: 'tabler:headset',
+        icon: 'tabler:rocket',
       },
       {
         variant: 'secondary',
-        text: '了解服务',
+        text: '企业解决方案',
         href: '/services',
         target: '_self',
-        icon: 'tabler:info-circle',
+        icon: 'tabler:building',
       },
     ]} image={null}>
     <Fragment slot="title">
-      <span class="text-accent dark:text-white">AIOS - 面向企业的AI解决方案平台</span>
+      <span class="text-accent dark:text-white">AIOS</span><br />
+      <span class="text-2xl md:text-3xl">探索AI的无限可能</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      基于MoFA企业级框架，提供从咨询到部署的全流程AI服务。智能驱动，业务增长。
-    </Fragment>
-
-    <Fragment slot="video">
-      <video
-        id="hero-video"
-        class="mx-auto rounded-md w-full aspect-video shadow-2xl bg-black"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-        controls
-      >
-        <source src={heroVideoUrl} type="video/mp4" />
-        您的浏览器不支持视频播放。
-      </video>
-
-      <script is:inline>
-        // Simple autoplay guarantee
-        const video = document.getElementById('hero-video');
-        if (video) {
-          video.muted = true;
-
-          // Try to play immediately
-          video.play().catch(() => {
-            // Fallback on user interaction
-            const play = () => {
-              video.play();
-              document.removeEventListener('click', play);
-            };
-            document.addEventListener('click', play);
-          });
-        }
-      </script>
+      您的AI探索伙伴——汇聚前沿项目、核心技术洞察、创新编程方法论与深度评测。<br class="hidden md:block" />
+      提供从战略咨询到系统部署的全栈AI解决方案，助力企业智能化转型。
     </Fragment>
   </Hero>
 
   <!-- Note Widget ******************* -->
 
   <Note
-    title="AIOS的核心优势"
-    description="AIOS采用Open Core模式，基于开源MoFA框架为企业提供专业AI解决方案服务。从战略咨询到系统部署，全程陪伴企业AI转型。"
+    title="为什么选择 AIOS？"
+    description="在AI快速发展的时代，AIOS致力于成为您最值得信赖的AI伙伴。无论是探索前沿技术、获取专业洞察，还是构建企业级AI系统，我们都能为您提供全方位支持。"
+  />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    tagline="AI 生态全景"
+    title="一站式AI探索与服务"
+    items={[
+      {
+        title: '前沿项目',
+        description: '汇聚精心打造的AI项目，从智能体到自动化工具，探索AI技术的无限边界',
+        icon: 'tabler:rocket',
+        link: '/projects',
+      },
+      {
+        title: '技术洞察',
+        description: '深度解析AI核心技术，从Prompt工程到模型微调，掌握AI开发精髓',
+        icon: 'tabler:bulb',
+        link: '/skills',
+      },
+      {
+        title: 'VibeCoding',
+        description: '创新编程方法论——用直觉和创造力编写代码，释放AI时代的编程艺术',
+        icon: 'tabler:code',
+        link: '/vibecoding',
+      },
+      {
+        title: '深度评测',
+        description: '专业客观的AI工具与模型评测，助您在众多选择中找到最优解',
+        icon: 'tabler:chart-bar',
+        link: '/reviews',
+      },
+      {
+        title: '企业解决方案',
+        description: '全栈AI解决方案，从战略咨询到系统部署，助力企业智能化转型',
+        icon: 'tabler:building',
+        link: '/services',
+      },
+      {
+        title: '技术社区',
+        description: '加入AI开发者社区，与全球技术爱好者共同探索AI技术的未来',
+        icon: 'tabler:users',
+        href: '#',
+      },
+    ]}
   />
 
   <!-- Content Widget **************** -->
 
   <Content
-    id="professional-services"
-    tagline="专业服务"
-    title="从战略到执行，全程陪伴"
+    id="about-platform"
+    tagline="关于 AIOS"
+    title="不只是内容平台，更是AI生态引擎"
     image={{
-      src: '~/assets/images/agentos/enterprise.png',
-      alt: 'AIOS Professional Services',
+      src: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AIOS Platform',
     }}
   >
     <Fragment slot="content">
-      <ul class="space-y-2 mt-4">
-        <li><strong>AI战略咨询：</strong>深入评估企业AI成熟度，识别高价值应用场景，制定切实可行的AI转型路线图</li>
-        <li><strong>定制化解决方案：</strong>基于MoFA企业级框架，快速构建符合企业业务需求的AI智能体系统</li>
-        <li><strong>端到端交付：</strong>从需求分析、方案设计、系统开发到部署上线的全流程交付服务</li>
-        <li><strong>持续优化服务：</strong>提供7x24监控、故障响应和持续优化，确保AI系统稳定运行并持续创造价值</li>
+      <p class="text-lg mb-4 font-medium">AIOS 是一个综合性的AI平台，涵盖内容、技术与服务的完整生态：</p>
+      <ul class="space-y-3 mt-4">
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong class="text-gray-900 dark:text-white">知识引擎：</strong>前沿项目展示、技术深度解析、创新方法论分享</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong class="text-gray-900 dark:text-white">决策引擎：</strong>专业AI工具评测，为您的技术选型提供可靠依据</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong class="text-gray-900 dark:text-white">创新引擎：</strong>VibeCoding方法论，用直觉与创造力重新定义编程</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong class="text-gray-900 dark:text-white">服务引擎：</strong>全栈AI解决方案，从战略咨询到系统落地全程护航</span>
+        </li>
       </ul>
     </Fragment>
   </Content>
@@ -113,106 +136,61 @@ const metadata = {
   <Content
     id="technical-foundation"
     isReversed
-    tagline="技术基石"
-    title="基于MoFA企业级框架"
+    tagline="技术实力"
+    title="全栈AI技术能力"
     image={{
-      src: '~/assets/images/agentos/bwmdN12Ic2t.png',
-      alt: 'MoFA Core Architecture',
+      src: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AI Technology Stack',
     }}
   >
     <Fragment slot="content">
-      <ul class="space-y-2 mt-4">
-        <li><strong>模块化架构：</strong>像搭积木一样构建智能体，极大提升开发效率和系统可维护性</li>
-        <li><strong>数据流驱动：</strong>采用灵活的数据流模式，智能体之间松耦合，可以动态重组、拆解和复用</li>
-        <li><strong>企业级特性：</strong>支持高可用部署、身份认证、数据加密、访问控制等企业级安全特性</li>
-        <li><strong>多模型支持：</strong>兼容OpenAI、Qwen等多种主流AI模型，保障技术自主权和选择灵活性</li>
+      <p class="text-lg mb-4 font-medium">深厚的技术积累，支撑您的AI之旅：</p>
+      <ul class="space-y-3 mt-4">
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>智能体开发</strong>——模块化架构设计，快速构建复杂AI系统</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>多模型集成</strong>——OpenAI、Claude、Qwen等主流模型无缝对接</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>企业级保障</strong>——高可用部署、安全认证、合规审计一应俱全</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>全栈能力</strong>——从数据处理到模型部署，端到端技术覆盖</span>
+        </li>
       </ul>
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    id="competitive-advantage"
-    tagline="差异化优势"
-    title="为什么选择AIOS？"
-    image={{
-      src: '~/assets/images/agentos/change.png',
-      alt: 'AIOS Competitive Advantage',
-    }}
-  >
-    <Fragment slot="content">
-      <div class="text-2xl font-bold mb-2">AIOS与传统AI服务商的核心差异</div>
-
-      <div class="mt-4 grid md:grid-cols-2 gap-4">
-        <div>
-          <div class="font-semibold text-red-600 mb-1">传统AI服务商</div>
-          <div class="text-sm">提供标准化工具或单一咨询服务，缺乏技术框架支撑，难以快速落地和持续优化</div>
-        </div>
-        <div>
-          <div class="font-semibold text-blue-600 mb-1">AIOS解决方案平台</div>
-          <div class="text-sm">基于MoFA企业级框架，提供从咨询到部署的一站式服务，快速交付、持续优化、全程可控</div>
-        </div>
-      </div>
-    </Fragment>
-  </Content>
-
-  <!-- Features Widget *************** -->
-
-  <Features
-    tagline="全方位服务体系"
-    title="AIOS六大专业服务"
-    items={[
-      {
-        title: 'AI战略咨询',
-        description: 'AI成熟度评估、场景识别、ROI评估、转型路径规划',
-        icon: 'tabler:brain',
-      },
-      {
-        title: '解决方案设计',
-        description: '系统架构设计、模型选型、数据方案设计、风险评估',
-        icon: 'tabler:schema',
-      },
-      {
-        title: '智能体系统开发',
-        description: '基于MoFA框架快速构建和部署定制化AI智能体系统',
-        icon: 'tabler:robot',
-      },
-      {
-        title: '数据工程服务',
-        description: '数据清洗、标注、质量管理、数据管道构建',
-        icon: 'tabler:database',
-      },
-      {
-        title: '模型优化服务',
-        description: 'Prompt工程、模型微调、RAG构建、性能调优',
-        icon: 'tabler:adjustments',
-      },
-      {
-        title: '运维支持服务',
-        description: '7x24监控、故障响应、系统优化、持续迭代',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
-
   <!-- Steps Widget ******************* -->
 
   <Steps
-    tagline="合作流程"
-    title="与AIOS合作的简单流程"
+    tagline="探索之旅"
+    title="如何开启您的AI之旅？"
     items={[
       {
-        title: '需求诊断',
-        description: '深入了解企业业务需求和AI应用场景，评估可行性和预期收益',
+        title: '探索发现',
+        description: '浏览前沿项目、技术洞察和深度评测，了解AI的最新动态和核心趋势',
+        icon: 'tabler:compass',
       },
       {
-        title: '方案设计',
-        description: '基于MoFA框架设计定制化AI解决方案，明确技术路径和交付计划',
+        title: '深度学习',
+        description: '掌握Prompt工程、模型微调、智能体开发等核心技能，成为AI开发者',
+        icon: 'tabler:school',
       },
       {
-        title: '快速交付',
-        description: '采用敏捷开发模式，快速构建、部署和优化AI智能体系统',
+        title: '实践创新',
+        description: '运用VibeCoding方法论，将创意转化为现实，构建属于您的AI应用',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: '企业赋能',
+        description: '需要专业支持？我们的团队为您提供从战略到落地的全栈AI服务',
+        icon: 'tabler:building',
       },
     ]}
   />
@@ -222,26 +200,27 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: '咨询AI方案',
-        href: '/contact',
+        text: '探索AI世界',
+        href: '/projects',
         target: '_self',
-        icon: 'tabler:headset',
+        icon: 'tabler:rocket',
       },
       {
         variant: 'secondary',
-        text: '了解服务详情',
+        text: '获取企业方案',
         href: '/services',
         target: '_self',
-        icon: 'tabler:info-circle',
+        icon: 'tabler:headset',
       },
     ]}
   >
     <Fragment slot="title">
-      <span class="sm:whitespace-nowrap">开启您的AI转型之旅</span>
+      <span class="sm:whitespace-nowrap">AI时代，从这里启航</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      AIOS专业团队随时准备为您提供AI战略咨询和解决方案设计服务!
+      无论您是AI探索者还是企业决策者，AIOS都是您值得信赖的伙伴。<br class="hidden md:block" />
+      让我们一起，探索AI的无限可能！
     </Fragment>
   </CallToAction>
 </Layout>

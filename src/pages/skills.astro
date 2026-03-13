@@ -1,0 +1,194 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '技术洞察',
+  description: '深度解析AI核心技术，掌握AI开发精髓',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="技术洞察"
+    image={{
+      src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Technical Skills',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">技术洞察</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      深度解析AI核心技术，从Prompt工程到模型微调，从数据处理到系统部署。我们提供系统化的技能体系，助力开发者快速成长。
+    </Fragment>
+  </Hero>
+
+  <!-- Features2 Widget: 核心技能 -->
+
+  <Features2
+    title="核心技能领域"
+    tagline="技能体系"
+    columns={3}
+    items={[
+      {
+        title: 'Prompt工程',
+        description: '掌握提示词设计技巧，提升AI模型输出质量和准确性',
+        icon: 'tabler:message-language',
+      },
+      {
+        title: '模型微调',
+        description: '学习如何对大语言模型进行定制化训练，适应特定任务需求',
+        icon: 'tabler:adjustments',
+      },
+      {
+        title: 'RAG技术',
+        description: '构建检索增强生成系统，结合知识库提升AI回答准确性',
+        icon: 'tabler:database',
+      },
+      {
+        title: '智能体开发',
+        description: '学习智能体架构设计和开发，构建自主决策的AI系统',
+        icon: 'tabler:robot',
+      },
+      {
+        title: '数据工程',
+        description: '掌握数据处理、清洗、标注和管道构建的核心技能',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: '系统部署',
+        description: '学习AI系统的部署、监控和运维最佳实践',
+        icon: 'tabler:cloud-upload',
+      },
+    ]}
+  />
+
+  <!-- Content Widget: Prompt工程 -->
+
+  <Content
+    id="prompt-engineering"
+    tagline="技能详解"
+    title="Prompt工程"
+    image={{
+      src: 'https://images.unsplash.com/photo-1676299081847-c3c9b2c5d7f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Prompt Engineering',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold mb-3">核心技能</h3>
+      <ul class="space-y-2">
+        <li><strong>提示词设计：</strong>学习如何编写清晰、有效的提示词，引导AI模型产生高质量输出</li>
+        <li><strong>Few-shot学习：</strong>通过示例教学，让模型快速理解任务要求和输出格式</li>
+        <li><strong>思维链提示：</strong>引导模型展示推理过程，提升复杂问题的解决能力</li>
+        <li><strong>提示词优化：</strong>迭代优化提示词，持续提升输出质量</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget: 模型微调 -->
+
+  <Content
+    id="model-fine-tuning"
+    isReversed
+    tagline="技能详解"
+    title="模型微调"
+    image={{
+      src: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Model Fine-tuning',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold mb-3">核心技能</h3>
+      <ul class="space-y-2">
+        <li><strong>数据准备：</strong>学习如何准备高质量的训练数据，确保微调效果</li>
+        <li><strong>微调策略：</strong>了解全量微调、LoRA等不同微调方法的优缺点</li>
+        <li><strong>超参数调优：</strong>掌握学习率、批次大小等超参数的调优技巧</li>
+        <li><strong>效果评估：</strong>学习如何评估微调效果，确保模型性能提升</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Steps2 Widget: 学习路径 -->
+
+  <Steps2
+    title="学习路径"
+    subtitle="从入门到精通的系统化学习"
+    items={[
+      {
+        title: '基础知识',
+        description: '了解AI和大语言模型的基本概念，掌握Python编程基础',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Prompt工程',
+        description: '深入学习提示词设计技巧，掌握与AI模型高效沟通的方法',
+        icon: 'tabler:message-language',
+      },
+      {
+        title: '应用开发',
+        description: '学习智能体开发和系统集成，构建实际AI应用',
+        icon: 'tabler:code',
+      },
+      {
+        title: '进阶优化',
+        description: '掌握模型微调和性能优化技巧，提升AI系统效果',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget: 学习资源 -->
+
+  <Features2
+    title="学习资源"
+    tagline="获取帮助"
+    columns={3}
+    items={[
+      {
+        title: '技术文档',
+        description: '详细的技术文档和教程，帮助你快速上手',
+        icon: 'tabler:book',
+      },
+      {
+        title: '开发者社区',
+        description: '加入AI开发者社区，与技术爱好者交流',
+        icon: 'tabler:users',
+      },
+      {
+        title: '培训服务',
+        description: '专业培训课程，系统化提升AI开发技能',
+        icon: 'tabler:presentation',
+        link: '/contact',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="需要技能培训服务？"
+    subtitle="我们提供专业的AI技能培训，帮助团队快速掌握AI开发能力"
+    actions={[
+      {
+        variant: 'primary',
+        text: '联系我们',
+        href: '/contact',
+        icon: 'tabler:mail',
+      },
+      {
+        variant: 'secondary',
+        text: '了解服务',
+        href: '/services',
+        icon: 'tabler:info-circle',
+      },
+    ]}
+  />
+</Layout>

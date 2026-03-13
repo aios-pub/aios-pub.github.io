@@ -1,0 +1,226 @@
+---
+import Layout from '~/layouts/PageLayoutEn.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'aios.pub - Explore the Infinite Possibilities of AI',
+  ignoreTitleTemplate: true,
+  description: 'AIOS is your AI exploration partner - bringing together cutting-edge projects, technical insights, innovative methodologies, and in-depth reviews. Full-stack AI solutions from strategy to deployment.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero actions={[
+      {
+        variant: 'primary',
+        text: 'Start AI Journey',
+        href: '/en/projects',
+        target: '_self',
+        icon: 'tabler:rocket',
+      },
+      {
+        variant: 'secondary',
+        text: 'Enterprise Solutions',
+        href: '/en/services',
+        target: '_self',
+        icon: 'tabler:building',
+      },
+    ]} image={null}>
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">AIOS</span><br />
+      <span class="text-2xl md:text-3xl">Explore the Infinite Possibilities of AI</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Your AI exploration partner — bringing together cutting-edge projects, technical insights, innovative methodologies, and in-depth reviews.<br class="hidden md:block" />
+      Full-stack AI solutions from strategy to deployment, empowering enterprise digital transformation.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note
+    title="Why AIOS?"
+    description="In the rapidly evolving AI era, AIOS is committed to being your most trusted AI partner. Whether exploring cutting-edge technology, gaining professional insights, or building enterprise AI systems, we provide comprehensive support every step of the way."
+  />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    tagline="AI Ecosystem"
+    title="One-stop AI Exploration & Services"
+    items={[
+      {
+        title: 'Cutting-edge Projects',
+        description: 'Curated AI projects from intelligent agents to automation tools, exploring the infinite boundaries of AI technology',
+        icon: 'tabler:rocket',
+        link: '/en/projects',
+      },
+      {
+        title: 'Technical Insights',
+        description: 'Deep analysis of core AI technologies, from Prompt engineering to model fine-tuning, master the essence of AI development',
+        icon: 'tabler:bulb',
+        link: '/en/skills',
+      },
+      {
+        title: 'VibeCoding',
+        description: 'Innovative programming methodology — write code with intuition and creativity, unleash the art of programming in the AI era',
+        icon: 'tabler:code',
+        link: '/en/vibecoding',
+      },
+      {
+        title: 'In-depth Reviews',
+        description: 'Professional and objective AI tool and model reviews, helping you find the optimal solution among countless choices',
+        icon: 'tabler:chart-bar',
+        link: '/en/reviews',
+      },
+      {
+        title: 'Enterprise Solutions',
+        description: 'Full-stack AI solutions from strategic consulting to system deployment, empowering enterprise transformation',
+        icon: 'tabler:building',
+        link: '/en/services',
+      },
+      {
+        title: 'Tech Community',
+        description: 'Join the AI developer community and explore the future of AI technology with enthusiasts worldwide',
+        icon: 'tabler:users',
+        href: '#',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about-platform"
+    tagline="About AIOS"
+    title="Not Just a Content Platform, But an AI Ecosystem Engine"
+    image={{
+      src: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AIOS Platform',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="text-lg mb-4 font-medium">AIOS is a comprehensive AI platform covering the complete ecosystem of content, technology, and services:</p>
+      <ul class="space-y-3 mt-4">
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong class="text-gray-900 dark:text-white">Knowledge Engine:</strong> Cutting-edge project showcases, deep technical analysis, and innovative methodology sharing</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong class="text-gray-900 dark:text-white">Decision Engine:</strong> Professional AI tool reviews providing reliable basis for your technology selection</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong class="text-gray-900 dark:text-white">Innovation Engine:</strong> VibeCoding methodology, redefining programming with intuition and creativity</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong class="text-gray-900 dark:text-white">Service Engine:</strong> Full-stack AI solutions, from strategic consulting to implementation</span>
+        </li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="technical-foundation"
+    isReversed
+    tagline="Technical Excellence"
+    title="Full-Stack AI Capabilities"
+    image={{
+      src: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AI Technology Stack',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="text-lg mb-4 font-medium">Deep technical expertise to power your AI journey:</p>
+      <ul class="space-y-3 mt-4">
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>Agent Development</strong> — Modular architecture design for rapid complex AI system construction</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>Multi-Model Integration</strong> — Seamless connection with OpenAI, Claude, Qwen and other mainstream models</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>Enterprise-Grade</strong> — High availability deployment, secure authentication, compliance audit all included</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>Full-Stack Coverage</strong> — End-to-end technology from data processing to model deployment</span>
+        </li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ******************* -->
+
+  <Steps
+    tagline="Your Journey"
+    title="How to Start Your AI Journey?"
+    items={[
+      {
+        title: 'Explore & Discover',
+        description: 'Browse cutting-edge projects, technical insights, and in-depth reviews to understand the latest AI trends',
+        icon: 'tabler:compass',
+      },
+      {
+        title: 'Deep Learning',
+        description: 'Master core skills like Prompt engineering, model fine-tuning, and agent development to become an AI developer',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Practice & Innovate',
+        description: 'Apply VibeCoding methodology, turn ideas into reality, and build your own AI applications',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Enterprise Empowerment',
+        description: 'Need professional support? Our team provides full-stack AI services from strategy to implementation',
+        icon: 'tabler:building',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Explore AI World',
+        href: '/en/projects',
+        target: '_self',
+        icon: 'tabler:rocket',
+      },
+      {
+        variant: 'secondary',
+        text: 'Get Enterprise Solutions',
+        href: '/en/services',
+        target: '_self',
+        icon: 'tabler:headset',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="sm:whitespace-nowrap">Your AI Journey Starts Here</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Whether you're an AI explorer or enterprise decision-maker, AIOS is your trusted partner.<br class="hidden md:block" />
+      Let's explore the infinite possibilities of AI together!
+    </Fragment>
+  </CallToAction>
+</Layout>

@@ -9,7 +9,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: '关于我们',
-  description: '了解AIOS - 基于MoFA框架的专业AI解决方案平台',
+  description: '了解AIOS - 您的AI探索伙伴，提供全栈AI解决方案',
 };
 ---
 
@@ -24,19 +24,19 @@ const metadata = {
     }}
   >
     <Fragment slot="title">
-      <span class="text-accent dark:text-white">智能驱动，业务增长</span><br />
-      AIOS - 企业级AI解决方案专家
+      <span class="text-accent dark:text-white">智能驱动，共创未来</span><br />
+      AIOS - 您的AI探索伙伴
     </Fragment>
 
     <Fragment slot="subtitle">
-      AIOS是基于MoFA企业级智能体框架的专业AI解决方案平台。我们致力于为企业提供从AI战略咨询、解决方案设计到系统部署和运维的全流程服务，助力企业实现AI转型，创造真实业务价值。
+      AIOS是一个综合性的AI平台，汇聚前沿项目、核心技术洞察、创新编程方法论与深度评测。我们致力于为开发者和企业提供从战略咨询到系统部署的全栈AI解决方案。
     </Fragment>
   </Hero>
 
   <!-- Stats Widget ****************** -->
 
   <Stats
-    title="AIOS平台数据"
+    title="平台数据"
     stats={[
       { title: '服务客户', amount: '50+' },
       { title: '成功项目', amount: '100+' },
@@ -49,23 +49,23 @@ const metadata = {
 
   <Features3
     title="我们的使命"
-    subtitle="让每一个企业都能轻松拥抱AI，释放数据价值，驱动业务增长"
+    subtitle="让每一个企业和开发者都能轻松拥抱AI，释放数据价值，驱动业务增长"
     columns={3}
     isBeforeContent={true}
     items={[
       {
         title: 'AI民主化',
-        description: '通过MoFA开源框架和AIOS专业服务，降低企业AI应用门槛，让更多企业享受到AI技术带来的价值',
+        description: '降低AI应用门槛，让更多企业和开发者享受到AI技术带来的价值',
         icon: 'tabler:rocket',
       },
       {
         title: '价值创造',
-        description: '专注于解决真实业务问题，以ROI为导向，确保AI投入能够带来可衡量的业务价值',
+        description: '专注于解决真实业务问题，以ROI为导向，确保AI投入带来可衡量的业务价值',
         icon: 'tabler:trending-up',
       },
       {
         title: '长期陪伴',
-        description: '不只是交付项目，更是长期合作伙伴。从咨询到部署，再到持续优化，全程陪伴企业AI成长之路',
+        description: '不只是交付项目，更是长期合作伙伴。从咨询到部署，再到持续优化，全程陪伴',
         icon: 'tabler:users',
       },
     ]}
@@ -79,17 +79,17 @@ const metadata = {
     items={[
       {
         title: '技术领先',
-        description: '基于MoFA企业级框架，拥有模块化、可组合的智能体架构，快速构建复杂AI系统',
+        description: '拥有全栈AI技术能力，从数据处理到模型部署，端到端技术覆盖',
         icon: 'tabler:brand-codesandbox',
       },
       {
         title: '行业经验',
-        description: '深耕金融、制造、零售、医疗等多个行业，积累了丰富的AI落地经验和最佳实践',
+        description: '深耕金融、制造、零售、医疗等多个行业，积累了丰富的AI落地经验',
         icon: 'tabler:briefcase',
       },
       {
         title: '专业团队',
-        description: '由AI领域资深专家组成，具备深厚的学术背景和丰富的工业界实践经验',
+        description: '由AI领域资深专家组成，具备深厚的学术背景和丰富的实践经验',
         icon: 'tabler:users',
       },
       {
@@ -104,7 +104,7 @@ const metadata = {
       },
       {
         title: '持续创新',
-        description: '紧跟AI技术发展前沿，持续将最新技术应用到产品和服务中，为客户创造更大价值',
+        description: '紧跟AI技术发展前沿，持续将最新技术应用到产品和服务中',
         icon: 'tabler:bulb',
       },
     ]}
@@ -114,7 +114,7 @@ const metadata = {
     }}
   />
 
-  <!-- Steps2 Widget: 我们的理念 -->
+  <!-- Steps2 Widget: 我们的价值观 -->
 
   <Steps2
     title="我们的价值观"
@@ -133,58 +133,7 @@ const metadata = {
       {
         title: '开放协作',
         description:
-          '拥抱开源，相信开放协作的力量。MoFA框架开源体现了我们的技术自信，也欢迎更多开发者加入生态。',
-      },
-    ]}
-  />
-
-  <!-- Steps2 Widget: 发展历程 -->
-
-  <Steps2
-    title="发展历程"
-    subtitle="从技术创新到商业实践"
-    isReversed={true}
-    callToAction={{
-      text: '加入我们',
-      href: '/contact',
-    }}
-    items={[
-      {
-        title: 'MoFA框架诞生',
-        description: '团队开始研发模块化智能体框架，探索更灵活的AI应用开发方式',
-        icon: 'tabler:plant-2',
-      },
-      {
-        title: 'MoFA开源',
-        description: 'MoFA框架正式开源，为开发者提供强大的智能体开发工具',
-        icon: 'tabler:brand-github',
-      },
-      {
-        title: 'AIOS成立',
-        description: '基于MoFA框架，成立AIOS商业服务，为企业提供专业AI解决方案',
-        icon: 'tabler:building',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget: 技术生态 -->
-
-  <Features2
-    title="技术生态"
-    tagline="MoFA & AIOS"
-    columns={2}
-    items={[
-      {
-        title: 'MoFA开源社区',
-        description: '访问MoFA开源项目，体验强大的模块化智能体开发框架',
-        icon: 'tabler:brand-github',
-        link: 'https://github.com/mofa-org/mofa',
-      },
-      {
-        title: 'AIOS商业服务',
-        description: '联系AIOS专业团队，获取企业级AI解决方案服务',
-        icon: 'tabler:headset',
-        link: '/contact',
+          '拥抱开源，相信开放协作的力量。我们积极参与技术社区，与开发者共同推动AI技术进步。',
       },
     ]}
   />
@@ -203,7 +152,7 @@ const metadata = {
       },
       {
         title: '技术交流',
-        description: '加入MoFA开源社区，与开发者交流技术',
+        description: '加入开发者社区，与技术爱好者交流',
         icon: 'tabler:messages',
       },
       {

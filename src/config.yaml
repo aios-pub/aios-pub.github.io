@@ -1,6 +1,6 @@
 site:
   name: AIOS
-  site: 'https://aios-rs.github.io'
+  site: 'https://aios.pub'
   base: '/'
   trailingSlash: false
 
@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AIOS - 面向企业的AI解决方案平台
-    template: '%s — AIOS'
-  description: "AIOS是专注于为企业提供全方位AI解决方案的平台。基于MoFA企业级智能体框架，提供从AI战略咨询、解决方案设计、到系统部署和运维的全流程服务。"
+    default: aios.pub - 探索AI无限可能
+    template: '%s | aios.pub'
+  description: "AIOS是您的AI探索伙伴——汇聚前沿AI项目、核心技术洞察、创新编程方法论与深度评测。提供从战略咨询到系统部署的全栈AI解决方案。"
   robots:
     index: true
     follow: true
@@ -28,7 +28,8 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  defaultLanguage: zh
+  languages: [zh, en]
   textDirection: ltr
 
 apps:

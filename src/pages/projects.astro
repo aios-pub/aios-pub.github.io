@@ -1,0 +1,158 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '前沿项目',
+  description: '汇聚精心打造的AI项目，探索AI技术的无限边界',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="前沿项目"
+    image={{
+      src: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AI Projects',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">AI项目展示</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      汇聚精心打造的AI项目，涵盖智能体、自动化工具、数据分析等多个领域。每个项目都经过严格测试和优化，确保高质量和可靠性。
+    </Fragment>
+  </Hero>
+
+  <!-- Features2 Widget: 核心项目 -->
+
+  <Features2
+    title="核心项目"
+    tagline="精选项目"
+    subtitle="全栈技术能力打造的优质AI项目"
+    columns={3}
+    items={[
+      {
+        title: '智能体开发框架',
+        description: '模块化智能体开发框架，支持快速构建和部署复杂AI系统',
+        icon: 'tabler:brand-codesandbox',
+      },
+      {
+        title: 'AI数据分析平台',
+        description: '强大的数据分析工具，支持多维度数据可视化和智能洞察',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: '智能对话系统',
+        description: '基于大语言模型的智能对话系统，支持多轮对话和上下文理解',
+        icon: 'tabler:message-chatbot',
+      },
+      {
+        title: '文档智能处理',
+        description: '自动文档解析、分类和信息提取，提升文档处理效率',
+        icon: 'tabler:file-text',
+      },
+      {
+        title: '代码生成助手',
+        description: 'AI驱动的代码生成工具，支持多种编程语言和框架',
+        icon: 'tabler:code',
+      },
+      {
+        title: '智能推荐引擎',
+        description: '个性化推荐系统，基于用户行为和偏好进行精准推荐',
+        icon: 'tabler:star',
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget: 项目特点 -->
+
+  <Steps2
+    title="项目特点"
+    subtitle="每个项目都遵循高质量标准"
+    items={[
+      {
+        title: '模块化设计',
+        description: '采用模块化架构设计，组件可复用、易维护、便于扩展',
+        icon: 'tabler:blocks',
+      },
+      {
+        title: '企业级质量',
+        description: '经过严格的测试和优化，满足企业级应用的稳定性和安全性要求',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: '开放协作',
+        description: '积极参与开源社区，欢迎贡献和协作开发',
+        icon: 'tabler:brand-github',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget: 行业应用 -->
+
+  <Features2
+    title="行业应用"
+    tagline="应用场景"
+    columns={3}
+    items={[
+      {
+        title: '金融科技',
+        description: '智能风控、量化分析、智能投顾等金融AI解决方案',
+        icon: 'tabler:coin',
+      },
+      {
+        title: '智能制造',
+        description: '预测性维护、质量检测、供应链优化等制造AI应用',
+        icon: 'tabler:building-factory',
+      },
+      {
+        title: '医疗健康',
+        description: '辅助诊断、智能问诊、健康管理等医疗AI解决方案',
+        icon: 'tabler:heartbeat',
+      },
+      {
+        title: '教育培训',
+        description: '智能辅导、个性化学习、自动批改等教育AI应用',
+        icon: 'tabler:school',
+      },
+      {
+        title: '零售电商',
+        description: '智能推荐、需求预测、智能客服等零售AI解决方案',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: '更多领域',
+        description: '持续探索更多AI应用场景，欢迎联系我们讨论定制需求',
+        icon: 'tabler:dots',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="有项目合作需求？"
+    subtitle="联系我们，获取定制化的AI项目开发服务"
+    actions={[
+      {
+        variant: 'primary',
+        text: '联系我们',
+        href: '/contact',
+        icon: 'tabler:mail',
+      },
+      {
+        variant: 'secondary',
+        text: '了解服务',
+        href: '/services',
+        icon: 'tabler:info-circle',
+      },
+    ]}
+  />
+</Layout>

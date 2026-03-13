@@ -1,0 +1,186 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '~/layouts/PageLayoutEn.astro';
+
+const metadata = {
+  title: 'About Us',
+  description: 'Learn about AIOS - Your AI exploration partner, providing full-stack AI solutions',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="About Us"
+    image={{
+      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AIOS Team',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">Intelligence Driven, Create the Future Together</span><br />
+      AIOS - Your AI Exploration Partner
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      AIOS is a comprehensive AI platform bringing together cutting-edge projects, technical insights, innovative methodologies, and in-depth reviews. We are dedicated to providing full-stack AI solutions from strategic consulting to system deployment for developers and enterprises.
+    </Fragment>
+  </Hero>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Platform Stats"
+    stats={[
+      { title: 'Clients Served', amount: '50+' },
+      { title: 'Projects Delivered', amount: '100+' },
+      { title: 'Industries Covered', amount: '10+' },
+      { title: 'Technical Experts', amount: '30+' },
+    ]}
+  />
+
+  <!-- Features3 Widget: Core Values -->
+
+  <Features3
+    title="Our Mission"
+    subtitle="Enable every enterprise and developer to easily embrace AI, unleash data value, and drive business growth"
+    columns={3}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'AI Democratization',
+        description: 'Lower the barrier to AI adoption, enabling more enterprises and developers to benefit from AI technology',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Value Creation',
+        description: 'Focus on solving real business problems, ROI-oriented, ensuring AI investments bring measurable business value',
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Long-term Partnership',
+        description: 'Not just delivering projects, but long-term partners. From consulting to deployment, to continuous optimization',
+        icon: 'tabler:users',
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget: Core Advantages -->
+
+  <Features3
+    columns={3}
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Technical Leadership',
+        description: 'Full-stack AI capabilities, from data processing to model deployment, end-to-end technology coverage',
+        icon: 'tabler:brand-codesandbox',
+      },
+      {
+        title: 'Industry Experience',
+        description: 'Deep expertise in finance, manufacturing, retail, healthcare, and other industries with rich AI implementation experience',
+        icon: 'tabler:briefcase',
+      },
+      {
+        title: 'Professional Team',
+        description: 'Composed of senior AI experts with deep academic background and rich industry practice experience',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Agile Delivery',
+        description: 'Adopt agile development methodology, rapid iteration, continuous delivery, ensuring on-time quality completion',
+        icon: 'tabler:bolt',
+      },
+      {
+        title: 'Customer Success',
+        description: 'Customer success oriented, not only delivering systems but ensuring customers can use and maintain AI systems well',
+        icon: 'tabler:trophy',
+      },
+      {
+        title: 'Continuous Innovation',
+        description: 'Keep up with AI technology development frontier, continuously apply latest technologies to products and services',
+        icon: 'tabler:bulb',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'AIOS Innovation',
+    }}
+  />
+
+  <!-- Steps2 Widget: Our Values -->
+
+  <Steps2
+    title="Our Values"
+    subtitle="These values guide every decision and action we make"
+    items={[
+      {
+        title: 'Customer First',
+        description:
+          'Customer success is the only measure of our success. We always put customer interests first, guided by customer needs, providing services that exceed expectations.',
+      },
+      {
+        title: 'Technology First',
+        description:
+          'Technology is our foundation. We continuously invest in R&D, maintaining technical leadership, providing customers with the most advanced AI solutions.',
+      },
+      {
+        title: 'Open Collaboration',
+        description:
+          'Embrace open source, believe in the power of open collaboration. We actively participate in tech communities, driving AI progress together with developers.',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget: Contact Us -->
+
+  <Features2
+    title="Contact Us"
+    tagline="Start Your AI Journey"
+    columns={3}
+    items={[
+      {
+        title: 'Business Inquiry',
+        description: 'Learn about AIOS services, get customized AI solutions',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Technical Exchange',
+        description: 'Join the developer community, exchange with tech enthusiasts',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Join Us',
+        description: 'AIOS is looking for like-minded AI talent',
+        icon: 'tabler:user-plus',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Ready to Start Your AI Project?"
+    subtitle="The AIOS professional team is ready to provide AI consulting services and tailor the most suitable AI solutions for you"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/en/contact',
+        icon: 'tabler:headset',
+      },
+      {
+        variant: 'secondary',
+        text: 'Learn Services',
+        href: '/en/services',
+        icon: 'tabler:info-circle',
+      },
+    ]}
+  />
+</Layout>

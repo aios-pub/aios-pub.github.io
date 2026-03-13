@@ -8,8 +8,8 @@ import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'AI服务',
-  description: 'AIOS提供全方位AI服务：AI战略咨询、解决方案设计、智能体系统开发、数据工程、模型优化和运维支持',
+  title: '企业AI解决方案',
+  description: 'AIOS提供全方位企业AI解决方案：AI战略咨询、智能体系统开发、数据工程、模型优化和运维支持，助力企业数字化转型',
 };
 ---
 
@@ -17,53 +17,52 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="专业AI服务"
-    title="AIOS全方位AI服务体系"
-    subtitle="从战略咨询到系统部署，AIOS为企业提供一站式AI解决方案服务。基于MoFA企业级框架，快速交付、全程可控。"
-    actions={[{ variant: 'primary', target: '_self', text: '咨询服务', href: '/contact', icon: 'tabler:headset' }]}
+    tagline="企业AI解决方案"
+    title="赋能企业，智领未来"
+    subtitle="从战略规划到系统落地，AIOS为企业提供全生命周期的AI解决方案。全栈技术能力，快速交付、稳定可靠、持续进化。"
+    actions={[{ variant: 'primary', target: '_self', text: '预约咨询', href: '/contact', icon: 'tabler:headset' }]}
     image={null}
   />
 
   <!-- Features Widget ************** -->
 
   <Features
-    tagline="六大核心服务"
-    title="AIOS专业AI服务"
-    subtitle="我们提供从战略到执行的全方位AI服务，助力企业实现AI转型"
+    tagline="全栈AI服务"
+    title="从愿景到现实，全程陪伴"
     items={[
       {
         title: 'AI战略咨询',
-        description: '评估企业AI成熟度，识别高价值应用场景，制定AI转型路线图',
+        description: '深度评估企业AI成熟度，识别高价值场景，制定可落地的AI转型路线图',
         icon: 'tabler:brain',
         link: '/contact',
       },
       {
         title: '解决方案设计',
-        description: '设计系统架构、选择合适模型、制定数据方案和风险评估',
+        description: '设计可扩展的AI架构，精准选型模型，制定完整数据方案与风险评估',
         icon: 'tabler:schema',
         link: '/contact',
       },
       {
         title: '智能体系统开发',
-        description: '基于MoFA框架快速构建和部署定制化AI智能体系统',
+        description: '模块化快速构建企业级AI智能体，支持多模型、多云、多场景部署',
         icon: 'tabler:robot',
         link: '/contact',
       },
       {
         title: '数据工程服务',
-        description: '数据清洗、标注、质量管理，构建高质量数据管道',
+        description: '从数据采集到质量管理，构建高质量数据管道，夯实AI基础',
         icon: 'tabler:database',
         link: '/contact',
       },
       {
         title: '模型优化服务',
-        description: 'Prompt工程、模型微调、RAG构建、性能调优',
+        description: 'Prompt工程、模型微调、RAG构建、性能调优，榨取AI最大价值',
         icon: 'tabler:adjustments',
         link: '/contact',
       },
       {
         title: '运维支持服务',
-        description: '7x24监控、故障响应、系统优化、持续迭代',
+        description: '7x24监控、快速响应、持续迭代，保障AI系统稳定高效运行',
         icon: 'tabler:headset',
         link: '/contact',
       },
@@ -74,7 +73,7 @@ const metadata = {
 
   <Content
     id="ai-consulting"
-    tagline="服务详情"
+    tagline="战略先行"
     title="AI战略咨询服务"
     image={{
       src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
@@ -82,49 +81,24 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-xl font-bold mb-3">服务内容</h3>
-      <ul class="space-y-2">
-        <li><strong>AI成熟度评估：</strong>全面评估企业当前AI应用水平和技术能力</li>
-        <li><strong>场景识别：</strong>识别最适合企业的AI应用场景，评估业务价值</li>
-        <li><strong>ROI评估：</strong>量化AI投资的预期回报，制定分阶段投资策略</li>
-        <li><strong>路径规划：</strong>制定切实可行的AI转型路线图和时间表</li>
-      </ul>
-      <h3 class="text-xl font-bold mb-3 mt-4">交付物</h3>
-      <ul class="space-y-1">
-        <li>• AI成熟度评估报告</li>
-        <li>• AI应用场景分析报告</li>
-        <li>• AI转型路线图</li>
-        <li>• 投资回报分析报告</li>
-      </ul>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget: 解决方案设计 -->
-
-  <Content
-    id="solution-design"
-    isReversed
-    tagline="服务详情"
-    title="解决方案设计服务"
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '解决方案设计',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-xl font-bold mb-3">服务内容</h3>
-      <ul class="space-y-2">
-        <li><strong>架构设计：</strong>基于MoFA框架设计可扩展、高可用的AI系统架构</li>
-        <li><strong>模型选型：</strong>根据业务需求选择最合适的AI模型（OpenAI、Qwen等）</li>
-        <li><strong>数据方案：</strong>设计数据采集、处理、存储和管理的完整方案</li>
-        <li><strong>风险评估：</strong>识别技术风险和业务风险，制定应对策略</li>
-      </ul>
-      <h3 class="text-xl font-bold mb-3 mt-4">交付物</h3>
-      <ul class="space-y-1">
-        <li>• 系统架构设计文档</li>
-        <li>• 技术选型报告</li>
-        <li>• 数据架构设计</li>
-        <li>• 风险评估与应对方案</li>
+      <p class="text-lg font-medium mb-4">帮您找到AI价值的最佳切入点</p>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong>AI成熟度评估：</strong>全面诊断企业AI现状，识别差距与机会</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong>场景价值分析：</strong>精准定位高ROI的AI应用场景</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong>转型路线规划：</strong>制定分阶段、可落地的AI转型路径</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-blue-500 mt-1">▸</span>
+          <span><strong>ROI预测分析：</strong>量化投资回报，支持决策</span>
+        </li>
       </ul>
     </Fragment>
   </Content>
@@ -133,116 +107,33 @@ const metadata = {
 
   <Content
     id="agent-development"
-    tagline="服务详情"
-    title="智能体系统开发服务"
+    isReversed
+    tagline="核心能力"
+    title="智能体系统开发"
     image={{
       src: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
       alt: '智能体系统开发',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-xl font-bold mb-3">服务内容</h3>
-      <ul class="space-y-2">
-        <li><strong>快速构建：</strong>基于MoFA模块化框架，快速开发定制化AI智能体</li>
-        <li><strong>系统集成：</strong>与企业现有系统无缝集成</li>
-        <li><strong>测试验证：</strong>全面的功能测试和性能验证</li>
-        <li><strong>部署上线：</strong>支持云端SaaS和本地化部署</li>
-      </ul>
-      <h3 class="text-xl font-bold mb-3 mt-4">技术特点</h3>
-      <ul class="space-y-1">
-        <li>• 基于MoFA企业级框架</li>
-        <li>• 模块化、可组合的智能体架构</li>
-        <li>• 数据流驱动的灵活设计</li>
-        <li>• 支持多模型、多云部署</li>
-      </ul>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget: 数据工程服务 -->
-
-  <Content
-    id="data-engineering"
-    isReversed
-    tagline="服务详情"
-    title="数据工程服务"
-    image={{
-      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '数据工程服务',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-xl font-bold mb-3">服务内容</h3>
-      <ul class="space-y-2">
-        <li><strong>数据清洗：</strong>去除噪声数据、处理缺失值、标准化数据格式</li>
-        <li><strong>数据标注：</strong>提供高质量的数据标注服务</li>
-        <li><strong>质量管理：</strong>建立数据质量监控体系，确保数据质量</li>
-        <li><strong>数据管道：</strong>构建自动化数据采集、处理和存储管道</li>
-      </ul>
-      <h3 class="text-xl font-bold mb-3 mt-4">交付物</h3>
-      <ul class="space-y-1">
-        <li>• 清洗后的高质量数据集</li>
-        <li>• 数据标注结果</li>
-        <li>• 数据管道代码</li>
-        <li>• 数据质量监控体系</li>
-      </ul>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget: 模型优化服务 -->
-
-  <Content
-    id="model-optimization"
-    tagline="服务详情"
-    title="模型优化服务"
-    image={{
-      src: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '模型优化服务',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-xl font-bold mb-3">服务内容</h3>
-      <ul class="space-y-2">
-        <li><strong>Prompt工程：</strong>优化提示词，提升模型输出质量</li>
-        <li><strong>模型微调：</strong>基于企业数据对模型进行定制化训练</li>
-        <li><strong>RAG构建：</strong>构建检索增强生成系统，提升知识准确性</li>
-        <li><strong>性能调优：</strong>优化响应速度和资源使用效率</li>
-      </ul>
-      <h3 class="text-xl font-bold mb-3 mt-4">技术手段</h3>
-      <ul class="space-y-1">
-        <li>• Prompt优化与模板化</li>
-        <li>• 领域知识微调</li>
-        <li>• 向量数据库与RAG</li>
-        <li>• 模型量化和加速</li>
-      </ul>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget: 运维支持服务 -->
-
-  <Content
-    id="operations-support"
-    isReversed
-    tagline="服务详情"
-    title="运维支持服务"
-    image={{
-      src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '运维支持服务',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-xl font-bold mb-3">服务内容</h3>
-      <ul class="space-y-2">
-        <li><strong>7x24监控：</strong>全天候监控系统运行状态，及时发现问题</li>
-        <li><strong>故障响应：</strong>快速响应和解决系统故障，最小化业务影响</li>
-        <li><strong>系统优化：</strong>持续优化系统性能和资源使用效率</li>
-        <li><strong>持续迭代：</strong>根据业务发展不断优化AI模型和功能</li>
-      </ul>
-      <h3 class="text-xl font-bold mb-3 mt-4">服务级别</h3>
-      <ul class="space-y-1">
-        <li>• 标准支持：5x8小时响应</li>
-        <li>• 高级支持：7x24小时响应</li>
-        <li>• 专属支持：专属技术团队</li>
-        <li>• SLA保障：可用性承诺</li>
+      <p class="text-lg font-medium mb-4">全栈技术能力，快速构建企业级AI智能体</p>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>模块化架构：</strong>像搭积木一样构建复杂AI系统</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>多模型兼容：</strong>OpenAI、Claude、Qwen等主流模型无缝切换</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>灵活部署：</strong>云端SaaS、私有化部署、混合云任选</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-500 mt-1">✓</span>
+          <span><strong>无缝集成：</strong>与企业现有系统快速对接</span>
+        </li>
       </ul>
     </Fragment>
   </Content>
@@ -251,37 +142,38 @@ const metadata = {
 
   <Features2
     title="行业解决方案"
-    subtitle="AIOS为各行业提供定制化AI解决方案"
+    tagline="深耕行业"
+    subtitle="为各行各业量身定制AI解决方案"
     columns={3}
     items={[
       {
-        title: '金融行业',
-        description: '智能投顾、风险评估、智能客服、反欺诈检测等金融AI解决方案',
+        title: '金融科技',
+        description: '智能投顾、风险评估、智能客服、反欺诈等金融AI方案',
         icon: 'tabler:coin',
       },
       {
-        title: '制造业',
-        description: '预测性维护、质量检测、供应链优化、智能排产等制造AI解决方案',
-        icon: 'tabler:building',
+        title: '智能制造',
+        description: '预测性维护、质量检测、供应链优化、智能排产',
+        icon: 'tabler:building-factory',
       },
       {
-        title: '零售行业',
-        description: '智能推荐、需求预测、智能客服、库存优化等零售AI解决方案',
+        title: '零售电商',
+        description: '智能推荐、需求预测、智能客服、库存优化',
         icon: 'tabler:shopping-cart',
       },
       {
         title: '医疗健康',
-        description: '辅助诊断、智能问诊、药物研发、健康管理等医疗AI解决方案',
+        description: '辅助诊断、智能问诊、药物研发、健康管理',
         icon: 'tabler:heartbeat',
       },
       {
         title: '教育培训',
-        description: '智能辅导、个性化学习、自动批改、智能答疑等教育AI解决方案',
+        description: '智能辅导、个性化学习、自动批改、智能答疑',
         icon: 'tabler:school',
       },
       {
         title: '更多行业',
-        description: '联系我们，获取您所在行业的定制化AI解决方案',
+        description: '联系我们，获取您所在行业的定制化方案',
         icon: 'tabler:dots',
       },
     ]}
@@ -290,32 +182,28 @@ const metadata = {
   <!-- Steps Widget: 服务流程 -->
 
   <Steps
-    title="AIOS服务流程"
-    tagline="合作步骤"
+    title="服务流程"
+    tagline="专业高效"
     items={[
       {
-        title: '需求沟通',
-        description: '了解企业业务需求和AI应用目标',
+        title: '需求洞察',
+        description: '深入了解业务痛点和AI应用目标',
       },
       {
-        title: '方案设计',
-        description: '设计定制化AI解决方案和实施计划',
+        title: '方案定制',
+        description: '设计针对性的AI解决方案和实施计划',
       },
       {
-        title: '合同签署',
-        description: '明确服务范围、交付标准和时间表',
+        title: '快速交付',
+        description: '敏捷开发，快速迭代，按时保质交付',
       },
       {
-        title: '实施交付',
-        description: '按计划实施项目，快速交付成果',
+        title: '培训赋能',
+        description: '提供全面培训，确保团队熟练使用',
       },
       {
-        title: '培训上线',
-        description: '提供用户培训，支持系统上线',
-      },
-      {
-        title: '持续支持',
-        description: '提供运维支持，持续优化改进',
+        title: '持续进化',
+        description: '运维支持，持续优化，共同成长',
       },
     ]}
   />
@@ -326,7 +214,7 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: '咨询服务',
+        text: '预约咨询',
         href: '/contact',
         icon: 'tabler:headset',
       },
@@ -337,7 +225,7 @@ const metadata = {
         icon: 'tabler:credit-card',
       },
     ]}
-    title="准备好开始您的AI项目了吗？"
-    subtitle="AIOS专业团队随时准备为您提供AI咨询服务，量身定制最适合的AI解决方案。"
+    title="准备好开启AI转型了吗？"
+    subtitle="AIOS专业团队随时待命，为您量身定制最适合的AI解决方案"
   />
 </Layout>
