@@ -1,0 +1,71 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { Post } from '~/types';
+
+import Layout from '~/layouts/PageLayoutEn.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+
+import { blogListRobots, fetchPosts, blogPostsPerPage } from '~/utils/blog-en';
+
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
+  const posts = await fetchPosts();
+  const totalPages = Math.ceil(posts.length / blogPostsPerPage);
+
+  const paths: {
+    params: { page: string };
+    props: { posts: Post[]; currentPage: number; totalPages: number };
+  }[] = [];
+  for (let i = 2; i <= totalPages; i++) {
+    const startIndex = (i - 1) * blogPostsPerPage;
+    const endIndex = startIndex + blogPostsPerPage;
+    paths.push({
+      params: { page: String(i) },
+      props: {
+        posts: posts.slice(startIndex, endIndex),
+        currentPage: i,
+        totalPages,
+      },
+    });
+  }
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+interface Props {
+  posts: Post[];
+  currentPage: number;
+  totalPages: number;
+}
+
+const { posts, currentPage, totalPages } = Astro.props as Props;
+
+const metadata = {
+  title: `Blog — Page ${currentPage}`,
+  robots: {
+    index: blogListRobots?.index && currentPage === 1,
+    follow: blogListRobots?.follow,
+  },
+  openGraph: {
+    type: 'blog',
+  },
+};
+
+const prevPageUrl = currentPage > 1 ? (currentPage === 2 ? '/en/blog' : `/en/blog/page/${currentPage - 1}`) : undefined;
+const nextPageUrl = currentPage < totalPages ? `/en/blog/page/${currentPage + 1}` : undefined;
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline
+      subtitle="Explore AIOS's latest updates, technical insights, VibeCoding methodology, and in-depth reviews to discover the infinite possibilities of AI technology"
+    >
+      Blog
+    </Headline>
+    <BlogList posts={posts} />
+    <Pagination prevUrl={prevPageUrl} nextUrl={nextPageUrl} />
+  </section>
+</Layout>

@@ -1,0 +1,60 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
+import merge from 'lodash.merge';
+import type { ImageMetadata } from 'astro';
+import Layout from '~/layouts/PageLayoutEn.astro';
+import SinglePost from '~/components/blog/SinglePost.astro';
+import ToBlogLinkEn from '~/components/blog/ToBlogLinkEn.astro';
+import RelatedPostsEn from '~/components/blog/RelatedPostsEn.astro';
+
+import { getCanonical } from '~/utils/permalinks';
+import { fetchPosts, blogPostRobots } from '~/utils/blog-en';
+import { findImage } from '~/utils/images';
+import type { MetaData } from '~/types';
+
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
+  const posts = await fetchPosts();
+  return posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+    props: { post },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { post } = Astro.props as Props;
+
+const url = getCanonical(`en/blog/${post.slug}`);
+const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
+
+const metadata = merge(
+  {
+    title: post.title,
+    description: post.excerpt,
+    robots: {
+      index: blogPostRobots?.index,
+      follow: blogPostRobots?.follow,
+    },
+    openGraph: {
+      type: 'article',
+      ...(image
+        ? { images: [{ url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height }] }
+        : {}),
+    },
+  },
+  { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
+) as MetaData;
+---
+
+<Layout metadata={metadata}>
+  <SinglePost post={{ ...post, image: image }} url={url}>
+    {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
+  </SinglePost>
+  <ToBlogLinkEn />
+  <RelatedPostsEn post={post} />
+</Layout>

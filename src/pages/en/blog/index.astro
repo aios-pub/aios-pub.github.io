@@ -1,0 +1,39 @@
+---
+import Layout from '~/layouts/PageLayoutEn.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+
+import { blogListRobots, fetchPosts, blogPostsPerPage } from '~/utils/blog-en';
+
+export const prerender = true;
+
+const posts = await fetchPosts();
+const totalPages = Math.ceil(posts.length / blogPostsPerPage);
+const pagePosts = posts.slice(0, blogPostsPerPage);
+
+const metadata = {
+  title: 'Blog',
+  robots: {
+    index: blogListRobots?.index,
+    follow: blogListRobots?.follow,
+  },
+  openGraph: {
+    type: 'blog',
+  },
+};
+
+const nextPageUrl = totalPages > 1 ? '/en/blog/page/2' : undefined;
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline
+      subtitle="Explore AIOS's latest updates, technical insights, VibeCoding methodology, and in-depth reviews to discover the infinite possibilities of AI technology"
+    >
+      Blog
+    </Headline>
+    <BlogList posts={pagePosts} />
+    <Pagination prevUrl={undefined} nextUrl={nextPageUrl} />
+  </section>
+</Layout>
