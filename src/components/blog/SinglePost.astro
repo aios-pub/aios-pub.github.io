@@ -16,9 +16,13 @@ export interface Props {
 }
 
 const { post, url } = Astro.props;
+
+const isEn = Astro.url.pathname.startsWith('/en');
+const tocLabel = isEn ? 'On this page' : '目录';
 ---
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
+  <div id="reading-progress" aria-hidden="true"></div>
   <article>
     <header
       class={post.image
@@ -52,7 +56,8 @@ const { post, url } = Astro.props;
           {
             post.readingTime && (
               <>
-                &nbsp;· <span>{post.readingTime}</span> 分钟阅读
+                &nbsp;· <span>{post.readingTime}</span>
+                {isEn ? ' min read' : ' 分钟阅读'}
               </>
             )
           }
@@ -90,14 +95,138 @@ const { post, url } = Astro.props;
         )
       }
     </header>
+
+    <details
+      id="post-toc-mobile"
+      class="hidden max-w-3xl mx-auto mt-6 px-4 sm:px-6 rounded-lg border border-gray-200 dark:border-slate-700"
+    >
+      <summary class="cursor-pointer py-3 text-sm font-medium select-none">{tocLabel}</summary>
+      <ul class="post-toc-list" data-toc-list></ul>
+    </details>
+
     <div
-      class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
+      id="post-body"
+      class="mx-auto px-4 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px]"
     >
       <slot />
     </div>
-    <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
+    <div class="mx-auto px-4 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
       <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
       <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" />
     </div>
   </article>
 </section>
+
+<nav id="post-toc" aria-label={tocLabel} class="hidden fixed right-6 top-28 z-10 w-52 max-h-[65vh] overflow-y-auto">
+  <p class="post-toc-title">{tocLabel}</p>
+  <ul class="post-toc-list" data-toc-list></ul>
+</nav>
+
+<script>
+  const TOC_ACTIVE_CLASS = 'post-toc-active';
+
+  const buildTocItem = (heading: HTMLHeadingElement): HTMLLIElement => {
+    const item = document.createElement('li');
+    item.className = `post-toc-item level-${heading.tagName.toLowerCase()}`;
+    const link = document.createElement('a');
+    link.href = `#${heading.id}`;
+    link.textContent = heading.textContent?.replace(/#$/, '').trim() || '';
+    item.appendChild(link);
+    return item;
+  };
+
+  const setupEnhancements = (): void => {
+    const body = document.getElementById('post-body');
+    const tocNav = document.getElementById('post-toc');
+    const tocMobile = document.getElementById('post-toc-mobile');
+    if (!body) return;
+
+    const headings = Array.from(body.querySelectorAll<HTMLHeadingElement>('h2, h3')).filter(
+      (heading) => !!heading.id
+    );
+
+    const hasToc = headings.length > 0 && !!tocNav && !!tocMobile;
+    if (tocNav) tocNav.classList.toggle('xl:block', hasToc);
+    if (tocMobile) tocMobile.classList.toggle('hidden', !hasToc);
+
+    for (const heading of headings) {
+      if (!heading.querySelector('.heading-anchor')) {
+        const anchor = document.createElement('a');
+        anchor.className = 'heading-anchor';
+        anchor.href = `#${heading.id}`;
+        anchor.textContent = '#';
+        heading.appendChild(anchor);
+      }
+    }
+
+    if (hasToc) {
+      for (const list of document.querySelectorAll<HTMLUListElement>('ul[data-toc-list]')) {
+        list.replaceChildren(...headings.map(buildTocItem));
+      }
+    }
+
+    const copyLabel = document.documentElement.lang === 'en' ? 'Copy' : '复制';
+    const copiedLabel = document.documentElement.lang === 'en' ? 'Copied' : '已复制';
+    for (const pre of body.querySelectorAll<HTMLPreElement>('pre.astro-code')) {
+      if (pre.querySelector('.prose-code-copy')) continue;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'prose-code-copy';
+      button.textContent = copyLabel;
+      button.addEventListener('click', () => {
+        navigator.clipboard
+          .writeText(pre.innerText)
+          .then(() => {
+            button.textContent = copiedLabel;
+            button.classList.add('prose-code-copied');
+            window.setTimeout(() => {
+              button.textContent = copyLabel;
+              button.classList.remove('prose-code-copied');
+            }, 1600);
+          })
+          .catch(() => {});
+      });
+      pre.appendChild(button);
+    }
+  };
+
+  const updateReadingState = (): void => {
+    const progress = document.getElementById('reading-progress');
+    const body = document.getElementById('post-body');
+    if (!progress || !body) return;
+
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = max > 0 ? `${Math.min(1, Math.max(0, window.scrollY / max)) * 100}%` : '0%';
+
+    const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('.post-toc-item a'));
+    if (links.length === 0) return;
+
+    let activeId = '';
+    for (const heading of body.querySelectorAll<HTMLHeadingElement>('h2, h3')) {
+      if (heading.id && heading.getBoundingClientRect().top <= 96) {
+        activeId = heading.id;
+      }
+    }
+
+    for (const link of links) {
+      link.classList.toggle(TOC_ACTIVE_CLASS, link.hash === `#${activeId}` && !!activeId);
+    }
+  };
+
+  let ticking = false;
+  const onScroll = (): void => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      ticking = false;
+      updateReadingState();
+    });
+  };
+
+  document.addEventListener('astro:page-load', () => {
+    setupEnhancements();
+    updateReadingState();
+  });
+
+  document.addEventListener('scroll', onScroll, { passive: true });
+</script>

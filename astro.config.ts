@@ -125,6 +125,15 @@ export default defineConfig({
       remarkPlugins: [readingTimeRemarkPlugin],
       rehypePlugins: [responsiveTablesRehypePlugin],
     }),
+    // Dual shiki themes: rendered as --shiki-light / --shiki-dark CSS variables,
+    // switched by the .dark class in tailwind.css (no inline colors emitted).
+    shikiConfig: {
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+      defaultColor: false,
+    },
   },
 
   vite: {

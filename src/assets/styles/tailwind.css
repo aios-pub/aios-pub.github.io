@@ -14,10 +14,13 @@
   --color-muted: var(--aw-color-text-muted);
 
   --font-sans:
-    var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+    var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Noto Sans SC', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
   --font-serif: var(--aw-font-serif, ui-serif), ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
-  --font-heading: var(--aw-font-heading, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+  --font-heading:
+    var(--aw-font-heading, ui-sans-serif), ui-sans-serif, system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Noto Sans SC', sans-serif;
 
   --animate-fade: fadeInUp 1s both;
 
@@ -114,4 +117,185 @@
 
 .dd *:first-child {
   margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+ * Blog reading experience
+ * ------------------------------------------------------------------------ */
+
+/* Chinese-friendly article typography */
+.prose p,
+.prose li,
+.prose blockquote {
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+.prose h2 {
+  margin-top: 2.4em;
+  margin-bottom: 0.9em;
+}
+.prose h3 {
+  margin-top: 1.9em;
+  margin-bottom: 0.7em;
+}
+.prose li {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+/* Tables: bordered card with zebra rows, horizontal scroll on small screens */
+.prose-table-wrap {
+  overflow-x: auto;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border: 1px solid rgb(229 231 235);
+  border-radius: 0.5rem;
+}
+.dark .prose-table-wrap {
+  border-color: rgb(51 65 85);
+}
+.prose table {
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.7;
+}
+.prose th,
+.prose td {
+  padding: 0.55em 0.9em;
+  white-space: nowrap;
+}
+.prose tbody tr:nth-child(even) {
+  background-color: rgb(249 250 251 / 70%);
+}
+.dark .prose tbody tr:nth-child(even) {
+  background-color: rgb(2 6 23 / 45%);
+}
+
+/* Code blocks: dual shiki themes (github-light / github-dark) via CSS vars */
+.prose pre.astro-code,
+.prose pre.astro-code span {
+  color: var(--shiki-light, inherit);
+}
+.prose pre.astro-code {
+  background-color: var(--shiki-light-bg, #f6f8fa);
+}
+.dark .prose pre.astro-code,
+.dark .prose pre.astro-code span {
+  color: var(--shiki-dark, inherit);
+}
+.dark .prose pre.astro-code {
+  background-color: var(--shiki-dark-bg, #24292e);
+}
+.prose pre.astro-code {
+  position: relative;
+  font-size: 0.86em;
+  line-height: 1.75;
+}
+
+/* Code copy button (injected by script in SinglePost.astro) */
+.prose-code-copy {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  border-radius: 0.375rem;
+  border: 1px solid rgb(209 213 219);
+  background-color: rgb(255 255 255 / 85%);
+  color: rgb(75 85 99);
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    background-color 0.2s ease;
+}
+.prose pre:hover .prose-code-copy,
+.prose-code-copy:focus-visible,
+.prose-code-copy.prose-code-copied {
+  opacity: 1;
+}
+.dark .prose-code-copy {
+  border-color: rgb(71 85 105);
+  background-color: rgb(15 23 42 / 80%);
+  color: rgb(203 213 225);
+}
+.prose-code-copy.prose-code-copied {
+  border-color: var(--aw-color-primary);
+  color: var(--aw-color-primary);
+}
+
+/* Heading anchors (injected by script in SinglePost.astro) */
+.prose .heading-anchor {
+  margin-left: 0.3em;
+  opacity: 0;
+  color: var(--aw-color-text-muted);
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.prose h2:hover .heading-anchor,
+.prose h3:hover .heading-anchor {
+  opacity: 1;
+}
+
+/* Reading progress bar */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  height: 3px;
+  width: 0;
+  background-color: var(--aw-color-primary);
+  pointer-events: none;
+}
+
+/* Table of contents */
+.post-toc-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--aw-color-text-muted);
+  text-transform: uppercase;
+}
+.post-toc-list {
+  margin: 0.5rem 0 0;
+  padding: 0 0 0 0.75rem;
+  list-style: none;
+  border-left: 2px solid rgb(229 231 235);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+.dark .post-toc-list {
+  border-left-color: rgb(51 65 85);
+}
+.post-toc-item {
+  margin: 0.3rem 0;
+}
+.post-toc-item a {
+  display: block;
+  padding-left: 0.5rem;
+  border-left: 2px solid transparent;
+  margin-left: calc(-0.75rem - 2px);
+  color: var(--aw-color-text-muted);
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+.post-toc-item.level-3 a {
+  padding-left: 1.4rem;
+}
+.post-toc-item a:hover,
+.post-toc-item a.post-toc-active {
+  color: var(--aw-color-primary);
+}
+.post-toc-item a.post-toc-active {
+  font-weight: 500;
 }

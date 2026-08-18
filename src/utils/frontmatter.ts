@@ -25,7 +25,7 @@ export const responsiveTablesRehypePlugin: RehypePlugin = () => {
           type: 'element',
           tagName: 'div',
           properties: {
-            style: 'overflow:auto',
+            className: ['prose-table-wrap'],
           },
           children: [child],
         };
