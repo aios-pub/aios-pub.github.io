@@ -34,11 +34,14 @@ const generatePermalink = async ({
     .replace('%second%', second);
 
   // Add /en/ prefix for English blog
-  return 'en/' + permalink
-    .split('/')
-    .map((el) => trimSlash(el))
-    .filter((el) => !!el)
-    .join('/');
+  return (
+    'en/' +
+    permalink
+      .split('/')
+      .map((el) => trimSlash(el))
+      .filter((el) => !!el)
+      .join('/')
+  );
 };
 
 const getNormalizedPost = async (post: CollectionEntry<'post-en'>): Promise<Post> => {

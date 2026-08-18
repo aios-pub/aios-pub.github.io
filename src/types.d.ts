@@ -2,45 +2,36 @@ import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes, ImageMetadata } from 'astro/types';
 
 export interface Post {
-  /** A unique ID number that identifies a post. */
+  /** Unique ID identifying the post. */
   id: string;
-
-  /** A post’s unique slug – part of the post’s URL based on its name, i.e. a post called “My Sample Page” has a slug “my-sample-page”. */
+  /** URL-friendly slug derived from the post name. */
   slug: string;
-
-  /**  */
+  /** Fully resolved permalink, computed from the configured pattern. */
   permalink: string;
 
-  /**  */
   publishDate: Date;
-  /**  */
   updateDate?: Date;
 
-  /**  */
   title: string;
   /** Optional summary of post content. */
   excerpt?: string;
-  /**  */
   image?: ImageMetadata | string;
 
-  /**  */
   category?: Taxonomy;
-  /**  */
   tags?: Taxonomy[];
-  /**  */
   author?: string;
 
-  /**  */
   metadata?: MetaData;
 
-  /**  */
   draft?: boolean;
 
-  /**  */
+  /** Rendered Astro component factory for the post body. */
   Content?: AstroComponentFactory;
+
+  /** Raw post content, for consumers that fetch it from an API. */
   content?: string;
 
-  /**  */
+  /** Estimated reading time in minutes. */
   readingTime?: number;
 }
 
@@ -93,11 +84,6 @@ export interface Image {
   alt?: string;
 }
 
-export interface Video {
-  src: string;
-  type?: string;
-}
-
 export interface Widget {
   id?: string;
   isDark?: boolean;
@@ -141,6 +127,13 @@ export interface Item {
   image?: Image;
   link?: string;
   href?: string;
+}
+
+export interface ItemGrid {
+  items?: Array<Item>;
+  columns?: number;
+  defaultIcon?: string;
+  classes?: Record<string, string>;
 }
 
 export interface Price {
@@ -191,13 +184,6 @@ export interface CallToAction extends Omit<HTMLAttributes<'a'>, 'slot'> {
   type?: 'button' | 'submit' | 'reset';
 }
 
-export interface ItemGrid {
-  items?: Array<Item>;
-  columns?: number;
-  defaultIcon?: string;
-  classes?: Record<string, string>;
-}
-
 export interface Collapse {
   iconUp?: string;
   iconDown?: string;
@@ -245,20 +231,14 @@ export interface Brands extends Omit<Headline, 'classes'>, Widget {
 
 export interface Features extends Omit<Headline, 'classes'>, Widget {
   image?: string | unknown;
-  video?: Video;
   items?: Array<Item>;
   columns?: number;
   defaultIcon?: string;
-  callToAction1?: CallToAction;
-  callToAction2?: CallToAction;
-  isReversed?: boolean;
   isBeforeContent?: boolean;
   isAfterContent?: boolean;
 }
 
 export interface Faqs extends Omit<Headline, 'classes'>, Widget {
-  iconUp?: string;
-  iconDown?: string;
   items?: Array<Item>;
   columns?: number;
 }

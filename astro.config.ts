@@ -1,10 +1,12 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
+
+import { unified } from '@astrojs/markdown-remark';
 
 import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
@@ -13,7 +15,7 @@ import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
 
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
+import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -32,10 +34,28 @@ export default defineConfig({
     },
   },
 
+  // Prefetch links as they enter the viewport for snappier navigations.
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
+
+  // Native Fonts API: self-hosts + subsets + preloads Inter and generates
+  // metric-adjusted fallbacks. Injected via <Font /> in Layout.astro and
+  // consumed through the `--font-inter` CSS variable in CustomStyles.astro.
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Inter',
+      cssVariable: '--font-inter',
+      weights: ['100 900'],
+      styles: ['normal'],
+      subsets: ['latin'],
+      fallbacks: ['sans-serif'],
+    },
+  ],
+
   integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
     sitemap(),
     mdx(),
     icon({
@@ -62,7 +82,11 @@ export default defineConfig({
     ),
 
     compress({
-      CSS: true,
+      // csso off on purpose: its parser doesn't understand the media range
+      // syntax Tailwind v4 emits for breakpoints (`@media (width>=48rem)`) and
+      // silently drops every one of those blocks — the site then renders as if
+      // all `md:`/`lg:` classes were missing. lightningcss parses it correctly.
+      CSS: { csso: false, lightningcss: { minify: true } },
       HTML: {
         'html-minifier-terser': {
           removeAttributeQuotes: false,
@@ -80,15 +104,31 @@ export default defineConfig({
   ],
 
   image: {
+    // Astro's default Sharp service handles local images.
+    //
+    // Most remote CDN images (Unsplash, Cloudinary, Imgix…) are routed by
+    // src/components/common/Image.astro through `unpic`, which rewrites the
+    // URL with CDN-side query parameters and serves it straight from the
+    // provider — Astro never downloads it, so they don't need to be listed.
+    //
+    // `domains` only matters for remote URLs that fall through to Astro's
+    // native <Image /> (i.e. providers Unpic can't detect, like Pixabay).
     domains: ['cdn.pixabay.com'],
+
+    // Emit responsive styles for the native <Image layout=…> used by
+    // src/components/common/Image.astro (local images).
+    responsiveStyles: true,
   },
 
   markdown: {
-    remarkPlugins: [readingTimeRemarkPlugin],
-    rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
+    processor: unified({
+      remarkPlugins: [readingTimeRemarkPlugin],
+      rehypePlugins: [responsiveTablesRehypePlugin],
+    }),
   },
 
   vite: {
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),

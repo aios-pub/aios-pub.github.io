@@ -34,6 +34,13 @@ export default [
     },
   },
   {
+    files: ['src/components/common/Analytics.astro', 'src/components/common/Analytics.astro/**'],
+    rules: {
+      'prefer-rest-params': 'off',
+      'no-var': 'off',
+    },
+  },
+  {
     // Define the configuration for `<script>` tag.
     // Script in `<script>` is assigned a virtual file name with the `.js` extension.
     files: ['**/*.{ts,tsx}', '**/*.astro/*.js'],

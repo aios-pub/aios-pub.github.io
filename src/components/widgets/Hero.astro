@@ -96,7 +96,7 @@ const {
 
         {
           // Check for custom video slot content
-          (await Astro.slots.has('video')) && (
+          Astro.slots.has('video') && (
             <div class="relative m-auto max-w-5xl">
               <slot name="video" />
             </div>

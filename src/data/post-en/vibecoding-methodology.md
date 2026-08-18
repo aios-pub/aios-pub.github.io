@@ -108,18 +108,21 @@ Liberated from tedious syntax details, focus on creation:
 AIOS provides complete VibeCoding tool support:
 
 ### Code Assistant
+
 - Intelligent code completion
 - Code explanation and refactoring
 - Bug fix suggestions
 - Code documentation generation
 
 ### Project Assistant
+
 - Project structure generation
 - Dependency management
 - Configuration file creation
 - Test case generation
 
 ### Documentation Assistant
+
 - API documentation generation
 - README writing
 - Code comments
@@ -163,14 +166,14 @@ Automatically generate project documentation:
 
 ## VibeCoding vs Traditional Programming
 
-| Dimension | Traditional Programming | VibeCoding |
-|-----------|------------------------|------------|
-| Thinking Style | Syntax-driven | Intent-driven |
-| Learning Curve | Steep | Gentle |
-| Development Speed | Medium | Fast |
-| Code Quality | Depends on experience | AI-assisted assurance |
-| Creative Space | Limited by technology | Greatly released |
-| Use Cases | Bottom-level systems | Application development |
+| Dimension         | Traditional Programming | VibeCoding              |
+| ----------------- | ----------------------- | ----------------------- |
+| Thinking Style    | Syntax-driven           | Intent-driven           |
+| Learning Curve    | Steep                   | Gentle                  |
+| Development Speed | Medium                  | Fast                    |
+| Code Quality      | Depends on experience   | AI-assisted assurance   |
+| Creative Space    | Limited by technology   | Greatly released        |
+| Use Cases         | Bottom-level systems    | Application development |
 
 ## Success Stories
 
@@ -189,16 +192,19 @@ Automatically generate project documentation:
 ## Start Your VibeCoding Journey
 
 ### Step 1: Change Your Mindset
+
 - Shift from "how to write code" to "what result you want"
 - Trust your intuition, describe boldly
 - Accept iteration, continuously improve
 
 ### Step 2: Choose Tools
+
 - Choose an AI programming assistant that suits you
 - Understand the tool's capabilities and boundaries
 - Establish efficient workflows
 
 ### Step 3: Continuous Learning
+
 - Follow AI technology developments
 - Accumulate prompt experience
 - Share and exchange best practices
