@@ -141,9 +141,7 @@ const tocLabel = isEn ? 'On this page' : '目录';
     const tocMobile = document.getElementById('post-toc-mobile');
     if (!body) return;
 
-    const headings = Array.from(body.querySelectorAll<HTMLHeadingElement>('h2, h3')).filter(
-      (heading) => !!heading.id
-    );
+    const headings = Array.from(body.querySelectorAll<HTMLHeadingElement>('h2, h3')).filter((heading) => !!heading.id);
 
     const hasToc = headings.length > 0 && !!tocNav && !!tocMobile;
     if (tocNav) tocNav.classList.toggle('xl:block', hasToc);
