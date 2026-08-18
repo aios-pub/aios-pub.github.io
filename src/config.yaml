@@ -11,7 +11,7 @@ metadata:
   title:
     default: aios.pub - 探索AI无限可能
     template: '%s | aios.pub'
-  description: 'AIOS是您的AI探索伙伴——汇聚前沿AI项目、核心技术洞察、创新编程方法论与深度评测。提供从战略咨询到系统部署的全栈AI解决方案。'
+  description: 'AIOS 让 AI 落地为切实可用的价值。我们维护一套持续增长的开源 AI 原生（AI-native）开发者工具链与基础设施，服务现代软件工程——一个构建真实世界、价值驱动 AI 开发者生态的开源引擎。'
   robots:
     index: true
     follow: true
